@@ -1,0 +1,17 @@
+{
+    "name": "gnome-shell-extension-rounded-window-corners-plane",
+    "version": "v1",
+    "description": "A GNOME extension that adds rounded corners to all windows",
+    "author": "wfpaisa <wfpaisa@gmail.com>",
+    "license": "GPL-3.0-or-later",
+    "main": "src/extension.ts",
+    "devDependencies": {
+        "@biomejs/biome": "^2.5.1",
+        "@girs/gnome-shell": "^50.0.3",
+        "typescript": "^6.0.3"
+    },
+    "scripts": {
+        "install": "just install",
+        "debug": "bash scripts/debug.sh"
+    }
+}
