@@ -389,23 +389,20 @@ function paintScale(
     actor: Clutter.Actor,
     stage: Clutter.Stage,
     ctx: Clutter.PaintContext,
-    deformed: boolean,
 ) {
     const scale = viewScale(stage, ctx);
     if (scale !== null) return scale;
-    // A deforming effect paints the window into its own buffer at
-    // ceil(scale), 2 at 150%. Rendering at that scale too took another
-    // buffer per window, of about 113 MiB for a maximized one on a 4K
-    // monitor, for each maximize or wobble. At the monitor's scale it shares
-    // the buffer the window already has, and the animation is barely softer.
-    if (deformed) {
-        const own =
-            actor instanceof Meta.WindowActor ? actor : actor.get_parent();
-        const window = own instanceof Meta.WindowActor ? own.metaWindow : null;
-        const monitor = window?.get_monitor() ?? -1;
-        if (monitor >= 0) return global.display.get_monitor_scale(monitor);
-    }
-    // Other nested offscreen paints: same choice as ClutterOffscreenEffect.
+    // Deforming effects, like wobbly windows, and other extensions paint the
+    // window into their own buffer at ceil(scale), 2 at 150%. Rendering at
+    // that scale too took another buffer per window, of about 113 MiB for a
+    // maximized one on a 4K monitor. At the scale of the window's monitor it
+    // shares the buffer the window already has, and the result is barely
+    // softer. Window screenshots are taken at that scale too.
+    const own = actor instanceof Meta.WindowActor ? actor : actor.get_parent();
+    const window = own instanceof Meta.WindowActor ? own.metaWindow : null;
+    const monitor = window?.get_monitor() ?? -1;
+    if (monitor >= 0) return global.display.get_monitor_scale(monitor);
+    // Not a window: same choice as ClutterOffscreenEffect.
     return actor.get_resource_scale();
 }
 
@@ -714,12 +711,7 @@ export const RoundedCornersEffect = GObject.registerClass(
         ) {
             const stage = actor.get_stage();
             if (!stage) return null;
-            const scale = paintScale(
-                actor,
-                stage as Clutter.Stage,
-                ctx,
-                deformed,
-            );
+            const scale = paintScale(actor, stage as Clutter.Stage, ctx);
 
             let x1: number;
             let y1: number;

@@ -98,17 +98,23 @@ nueva en la sección de historial.
   overview, las animaciones o ventanas deformadas no se descarta nada.
 - **Dónde**: `offView` en `rounded_corners_effect.ts`.
 
-### Deformaciones a la escala del monitor
+### Pintados offscreen a la escala del monitor
 
-- **Qué hace**: cuando un efecto que deforma la ventana (wobbly de *Compiz
-  windows effect*, lámpara mágica) la envuelve, el efecto la renderiza a la
-  escala del monitor de la ventana y reutiliza el buffer que ya tiene.
-- **Por qué**: esos efectos pintan la ventana en su propio buffer a
-  `ceil(escala)`, 2 a 150 %, y el efecto la renderizaba también a 2 en un
-  buffer aparte: unos 113 MiB por ventana maximizada en 4K cada vez que se
-  maximizaba o se movía, que tardaban 10 s en liberarse. Medido con
-  `nvidia-smi`: 534 MiB en reposo y 786 MiB al maximizar. Durante la
-  animación la ventana se ve apenas más suave; en reposo no cambia nada.
+- **Qué hace**: cuando la ventana no se pinta directamente en un monitor sino
+  en el buffer de otro efecto (wobbly de *Compiz windows effect*, lámpara
+  mágica, animaciones o vistas previas de otras extensiones, capturas de una
+  ventana), el efecto la renderiza a la escala del monitor de la ventana y
+  reutiliza el buffer que ya tiene.
+- **Por qué**: esos buffers ajenos se crean a `ceil(escala)`, 2 a 150 %, y el
+  efecto renderizaba también a 2 en un buffer aparte: unos 113 MiB por
+  ventana maximizada en 4K. Medido con `nvidia-smi`:
+  - Al maximizar con Compiz, el pico bajó de 786 a 629 MiB al aplicarlo a
+    las deformaciones.
+  - Otra animación que pintaba todas las ventanas a la vez llegó a 8 buffers
+    a 2x (416 MiB); por eso se extendió a cualquier pintado offscreen.
+- **Contrapartida**: durante esas animaciones y en las capturas de una sola
+  ventana la imagen sale a 1.5 en vez de a 2, apenas más suave. En pantalla,
+  en reposo, no cambia nada.
 - **Dónde**: `paintScale` en `rounded_corners_effect.ts`.
 
 ### Probado y descartado: no pintar ventanas tapadas
@@ -317,11 +323,13 @@ orden y la razón de cada cambio:
    logs mostraron que cada ventana se pintaba también en los monitores donde
    estaba fuera de pantalla, con un buffer por escala.
    Con eso el coste de la extensión pasó de ~470 MiB a ~110–190 MiB.
-7. **Deformaciones a la escala del monitor** (estado actual). Al maximizar
-   con *Compiz windows effect*, el efecto creaba un buffer extra a 2x de unos
-   113 MiB por ventana. Ahora reutiliza el de la ventana. Antes se probó no
-   pintar las ventanas tapadas, pero no se puede saber si una ventana es
-   opaca (ver "Probado y descartado").
+7. **Deformaciones a la escala del monitor**. Al maximizar con *Compiz
+   windows effect*, el efecto creaba un buffer extra a 2x de unos 113 MiB por
+   ventana; ahora reutiliza el de la ventana. Antes se probó no pintar las
+   ventanas tapadas, pero no se puede saber si una ventana es opaca (ver
+   "Probado y descartado").
+8. **Todo pintado offscreen a la escala del monitor** (estado actual). Otra
+   animación seguía pintando todas las ventanas a 2x (416 MiB de pico).
 
 Si hay que ajustar el tope, cambia `BUFFER_BUDGET_BYTES` en
 `src/effect/rounded_corners_effect.ts`. Como referencia, una ventana
