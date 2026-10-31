@@ -60,8 +60,14 @@ nueva en la sección de historial.
   buffers comparten un presupuesto de VRAM (`BUFFER_BUDGET_BYTES`, 512 MiB).
   Si una ventana necesita un buffer y no hay presupuesto, toma el de la
   ventana que lleva más tiempo sin pintarse (LRU), y esa otra se vuelve a
-  renderizar cuando se pinte. Los buffers que no se usan durante 10 s se
-  liberan.
+  renderizar cuando se pinte. El presupuesto cuenta 8 bytes por píxel: 4 de
+  color y 4 del buffer de profundidad y stencil que Cogl crea junto a cada
+  framebuffer offscreen (desde GJS no se puede evitar). Antes contaba solo el
+  color, así que "512 MiB" eran en realidad ~1 GiB: con la extensión activa
+  gnome-shell usaba 0.9–1.2 GB más que sin ella. Un temporizador libera cada
+  2 s los buffers que no se pintan desde hace 10 s (por ejemplo, los de
+  ventanas de otros escritorios tras cerrar el overview); antes solo se
+  revisaba al pintar, así que con el escritorio quieto nunca se liberaban.
 - **Por qué**: es el equilibrio entre dos problemas reales que aparecieron uno
   después del otro (ver el [historial](#historial-de-buffers-offscreen)):
   1. Un buffer por ventana sin límite llegó a consumir **varios GB de VRAM**.
@@ -74,13 +80,33 @@ nueva en la sección de historial.
   Con el presupuesto, el caso normal (las ventanas caben) es fluido, y en el
   peor caso (muchas ventanas grandes) se degrada al comportamiento del buffer
   compartido en vez de seguir reservando memoria.
-- **Dónde**: `acquireBuffer`, `ensureBuffer`, `releaseIdleBuffers` en
+- **Dónde**: `acquireBuffer`, `ensureBuffer`, `releaseIdleBuffers`,
+  `startIdleCheck` en
   `rounded_corners_effect.ts`.
+
+### No pintar ventanas en monitores que no las muestran
+
+- **Qué hace**: antes de pintar, el efecto proyecta el área de la ventana
+  (con sombra) sobre el monitor que se está pintando. Si queda fuera, no pinta
+  nada ni reserva buffer.
+- **Por qué**: los logs de depuración mostraron que, con dos monitores (4K a
+  1.5 y otro a 1), cada ventana del monitor 4K tenía además un buffer a escala
+  1 para el segundo monitor, donde estaba fuera de pantalla: unos 120 MiB y
+  un render extra por ventana sin ningún efecto visible. Las ventanas con este
+  efecto se pintaban en todos los monitores.
+- **Límite**: solo aplica cuando la ventana se pinta sin transformar. En el
+  overview, las animaciones o ventanas deformadas no se descarta nada.
+- **Dónde**: `offView` en `rounded_corners_effect.ts`.
 
 ### Recolección de basura forzada al liberar buffers
 
-- **Qué hace**: cuando se han liberado 256 MiB de buffers, se programa un
-  `System.gc()` en idle. Al desactivar la extensión se fuerza de inmediato.
+- **Qué hace**: se programa un `System.gc()` en idle cuando se han liberado
+  64 MiB de buffers, y también después de cada barrido de buffers inactivos.
+  Al desactivar la extensión se fuerza de inmediato.
+- **Por qué el umbral bajó de 256 a 64 MiB**: con 256 MiB, cientos de MiB de
+  texturas ya soltadas seguían ocupando VRAM a la espera del recolector; se
+  veía como diferencias de ~300 MiB entre mediciones con `nvidia-smi` en el
+  mismo estado.
 - **Por qué**: GJS solo libera una textura cuando su objeto JS se recolecta, y
   el recolector solo cuenta la memoria de JS, no la VRAM que hay detrás. Sin
   esto, las texturas descartadas (por ejemplo al redimensionar) se acumulaban
@@ -255,13 +281,22 @@ orden y la razón de cada cambio:
    estos buffers tiene un tope fijo, y si no alcanza se degrada al
    comportamiento del paso 3 en vez de crecer. La recolección de basura
    forzada sigue activa para que las texturas descartadas no se acumulen.
-5. **Sin `LinearFilterEffect` en el overview** (estado actual). Con el paso 4
+5. **Sin `LinearFilterEffect` en el overview**. Con el paso 4
    el overview seguía con tirones y gnome-shell llegaba a 4 GB de VRAM. El
    responsable era el filtro lineal de las vistas previas, que creaba un FBO
    a 2x con mipmaps por ventana en cada apertura del overview, fuera del
    presupuesto (ver "Vistas previas del overview sin efectos extra"). Sin
    él, las vistas previas reutilizan el buffer de cada ventana.
+6. **Sin buffers para monitores que no muestran la ventana** (estado
+   actual). Al contar el coste real (8 B/píxel) y liberar por temporizador, la
+   VRAM no bajaba: los logs mostraron que cada ventana se pintaba también en
+   los monitores donde estaba fuera de pantalla, con un buffer por escala.
 
 Si hay que ajustar el tope, cambia `BUFFER_BUDGET_BYTES` en
 `src/effect/rounded_corners_effect.ts`. Como referencia, una ventana
-maximizada ocupa unos 10 MiB en un monitor 1080p y unos 36 MiB en uno 4K.
+maximizada ocupa unos 20 MiB en un monitor 1080p y unos 72 MiB en uno 4K,
+contando color, profundidad y stencil.
+
+Si con muchas ventanas el overview vuelve a dar tirones, es que no caben en
+el presupuesto y se están reemplazando en cada frame: hay que subir el tope o
+reducir lo que ocupa cada ventana.

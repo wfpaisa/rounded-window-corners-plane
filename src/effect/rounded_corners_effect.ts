@@ -119,28 +119,57 @@ function bufferSize(size: number) {
 }
 
 // Buffers that nothing was painted from for this long are dropped, for
-// example those of a scale after a screencast at that scale ends.
+// example those of windows on other workspaces after the overview closes, or
+// of a scale after a screencast at that scale ends. A timer checks for them,
+// since a static desktop paints nothing that would.
 const BUFFER_IDLE_US = 10_000_000;
-let lastIdleCheck = 0;
+const IDLE_CHECK_SECONDS = 2;
+let idleSourceId = 0;
 
 // Every live target, to drop their idle buffers.
 const targets = new Set<Target>();
 
 // VRAM that all buffers together may use. A maximized window takes about
-// 10 MiB on a 1080p monitor and 36 MiB on a 4K one.
+// 20 MiB on a 1080p monitor and 72 MiB on a 4K one.
 const BUFFER_BUDGET_BYTES = 512 * 1024 * 1024;
 let usedBytes = 0;
 
+// Cogl gives each offscreen framebuffer a packed depth and stencil buffer
+// next to its color texture, and GJS cannot ask it not to, so every pixel
+// costs 4 bytes of color plus 4 of depth and stencil.
+const BYTES_PER_PIXEL = 8;
+
 function bufferBytes(buffer: Buffer) {
-    return buffer.width * buffer.height * 4;
+    return buffer.width * buffer.height * BYTES_PER_PIXEL;
 }
 
 // GJS frees a dropped texture only when its wrapper is garbage collected, and
 // the collector only tracks JS memory, not the VRAM behind it. Collect once
 // enough buffers were dropped, or they pile up by gigabytes.
-const RELEASED_BYTES_BEFORE_GC = 256 * 1024 * 1024;
+const RELEASED_BYTES_BEFORE_GC = 64 * 1024 * 1024;
 let releasedBytes = 0;
 let gcSourceId = 0;
+
+/** Collect dropped buffers soon, when the shell is idle. */
+function scheduleGc() {
+    if (gcSourceId !== 0) return;
+    gcSourceId = GLib.idle_add(GLib.PRIORITY_LOW, () => {
+        gcSourceId = 0;
+        releasedBytes = 0;
+        System.gc();
+        return GLib.SOURCE_REMOVE;
+    });
+}
+
+/** Log what the buffers take, to compare with the VRAM of the shell. */
+function logBuffers(reason: string) {
+    let count = 0;
+    for (const target of targets) if (target.buffer) count++;
+    const mib = (usedBytes / 1024 / 1024).toFixed(0);
+    logDebug(
+        `Buffers after ${reason}: ${count} of ${targets.size}, ${mib} MiB`,
+    );
+}
 
 function releaseBuffer(target: Target) {
     const buffer = target.buffer;
@@ -150,13 +179,7 @@ function releaseBuffer(target: Target) {
     target.rendered = false;
     usedBytes -= bufferBytes(buffer);
     releasedBytes += bufferBytes(buffer);
-    if (releasedBytes < RELEASED_BYTES_BEFORE_GC || gcSourceId !== 0) return;
-    gcSourceId = GLib.idle_add(GLib.PRIORITY_LOW, () => {
-        gcSourceId = 0;
-        releasedBytes = 0;
-        System.gc();
-        return GLib.SOURCE_REMOVE;
-    });
+    if (releasedBytes >= RELEASED_BYTES_BEFORE_GC) scheduleGc();
 }
 
 /** Drop and collect every buffer, e.g. when the extension is disabled. */
@@ -164,6 +187,10 @@ export function releaseBuffers() {
     for (const target of targets) releaseBuffer(target);
     targets.clear();
     usedBytes = 0;
+    if (idleSourceId !== 0) {
+        GLib.source_remove(idleSourceId);
+        idleSourceId = 0;
+    }
     if (gcSourceId !== 0) {
         GLib.source_remove(gcSourceId);
         gcSourceId = 0;
@@ -196,15 +223,43 @@ function createBuffer(
     };
 }
 
-/** Drop the buffers of targets that were not painted for a while. */
-function releaseIdleBuffers(now: number) {
-    // Scanning every target on each paint would cost O(windows²) per frame.
-    if (now - lastIdleCheck < BUFFER_IDLE_US / 10) return;
-    lastIdleCheck = now;
+/**
+ * Drop the buffers of targets that were not painted for a while, and collect
+ * them right away instead of waiting for more to pile up.
+ *
+ * @returns Whether to keep checking, that is, whether buffers are left.
+ */
+function releaseIdleBuffers() {
+    const now = GLib.get_monotonic_time();
+    let released = false;
+    let left = false;
     for (const target of targets) {
-        if (target.buffer && now - target.buffer.lastUsed > BUFFER_IDLE_US)
+        if (!target.buffer) continue;
+        if (now - target.buffer.lastUsed > BUFFER_IDLE_US) {
             releaseBuffer(target);
+            released = true;
+        } else {
+            left = true;
+        }
     }
+    if (released) {
+        scheduleGc();
+        logBuffers('idle release');
+    }
+    return left;
+}
+
+function startIdleCheck() {
+    if (idleSourceId !== 0) return;
+    idleSourceId = GLib.timeout_add_seconds(
+        GLib.PRIORITY_LOW,
+        IDLE_CHECK_SECONDS,
+        () => {
+            if (releaseIdleBuffers()) return GLib.SOURCE_CONTINUE;
+            idleSourceId = 0;
+            return GLib.SOURCE_REMOVE;
+        },
+    );
 }
 
 /** The target, other than `except`, whose buffer was painted least recently. */
@@ -239,7 +294,10 @@ function acquireBuffer(
     }
     releaseBuffer(target);
 
-    while (usedBytes + allocWidth * allocHeight * 4 > BUFFER_BUDGET_BYTES) {
+    while (
+        usedBytes + allocWidth * allocHeight * BYTES_PER_PIXEL >
+        BUFFER_BUDGET_BYTES
+    ) {
         const victim = leastRecentlyUsed(target);
         if (!victim) break;
         // biome-ignore lint/style/noNonNullAssertion: leastRecentlyUsed only returns targets with a buffer.
@@ -258,7 +316,9 @@ function acquireBuffer(
     const buffer = createBuffer(context, allocWidth, allocHeight);
     if (!buffer) return null;
     usedBytes += bufferBytes(buffer);
+    startIdleCheck();
     bindBuffer(target, buffer);
+    logBuffers('allocation');
     return buffer;
 }
 
@@ -270,8 +330,6 @@ function ensureBuffer(
     height: number,
 ) {
     const now = GLib.get_monotonic_time();
-    releaseIdleBuffers(now);
-
     let buffer = target.buffer;
     if (!buffer || buffer.width < width || buffer.height < height) {
         buffer = acquireBuffer(context, target, width, height);
@@ -392,6 +450,34 @@ function screenOrigin(
     return [x0, y0];
 }
 
+/**
+ * Whether the actor, shadow included, lies outside the view being painted.
+ *
+ * Windows with this effect are painted on every monitor, also on those that
+ * do not show them, and each paint needs a buffer at that monitor's scale.
+ * The effect only paints inside the paint volume, so skip the rest.
+ */
+function offView(actor: Clutter.Actor, ctx: Clutter.PaintContext) {
+    const stage = actor.get_stage();
+    const volume = actor.get_paint_volume();
+    if (!(stage && volume)) return false;
+    const framebuffer = ctx.get_framebuffer();
+    const scale = paintScale(actor, stage as Clutter.Stage, ctx);
+    const screen = screenOrigin(framebuffer, scale);
+    if (!screen) return false;
+    const origin = volume.get_origin();
+    const left = screen[0] + origin.x * scale;
+    const top = screen[1] + origin.y * scale;
+    const right = left + volume.get_width() * scale;
+    const bottom = top + volume.get_height() * scale;
+    return (
+        right <= 0 ||
+        bottom <= 0 ||
+        left >= framebuffer.get_width() ||
+        top >= framebuffer.get_height()
+    );
+}
+
 /** Whether an effect is currently deforming its actor. */
 function isDeforming(effect: Clutter.Effect) {
     return effect instanceof Clutter.DeformEffect && effect.enabled;
@@ -498,6 +584,9 @@ export const RoundedCornersEffect = GObject.registerClass(
             // the window, so new contents invalidate every scale at once.
             if (dirty) this.#invalidate();
             const deform = actor ? this.#deformState(actor) : 'none';
+            // Nothing to paint, and above all no buffer to allocate.
+            if (actor && !bypass && deform === 'none' && offView(actor, ctx))
+                return;
             // A deformation inside this effect would be cut by the mask:
             // paint the window plainly until the effects are reordered.
             const target =
