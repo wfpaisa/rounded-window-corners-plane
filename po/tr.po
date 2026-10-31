@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 13:19-0500\n"
+"POT-Creation-Date: 2026-10-31 13:17-0500\n"
 "PO-Revision-Date: 2023-05-14 22:51+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/rounded-window-"
@@ -40,283 +40,57 @@ msgid ""
 "windows."
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:25
 #, fuzzy
 msgid "Add window"
 msgstr "Pencere Ekle"
-
-#: src/preferences/pages/custom.ui:6 src/preferences/pages/custom.ui:10
-msgid "Custom"
-msgstr "Özel"
-
-#: src/preferences/pages/custom.ui:11
-#, fuzzy
-msgid "Set custom effect setting for each window class"
-msgstr "Bu pencere için özel ayarları etkinleştir"
-
-#: src/preferences/pages/edit-shadow.ui:6
-msgid "Edit shadows"
-msgstr ""
-
-#: src/preferences/pages/edit-shadow.ui:28
-#, fuzzy
-msgid "Focused window"
-msgstr "Odaklı Pencere"
-
-#: src/preferences/pages/edit-shadow.ui:43
-#, fuzzy
-msgid "Unfocused window"
-msgstr "Odaklanmamış Pencere"
-
-#: src/preferences/pages/edit-shadow.ui:66
-#, fuzzy
-msgid "Focused shadow preferences"
-msgstr "Tercihleri Sıfırla"
-
-#: src/preferences/pages/edit-shadow.ui:69
-#: src/preferences/pages/edit-shadow.ui:209
-#, fuzzy
-msgid "Horizontal offset"
-msgstr "Yatay Konum"
-
-#: src/preferences/pages/edit-shadow.ui:96
-#: src/preferences/pages/edit-shadow.ui:236
-#, fuzzy
-msgid "Vertical offset"
-msgstr "Dikey Konum"
-
-#: src/preferences/pages/edit-shadow.ui:123
-#: src/preferences/pages/edit-shadow.ui:263
-#, fuzzy
-msgid "Blur radius"
-msgstr "Kenarlık Yarıçapı"
-
-#: src/preferences/pages/edit-shadow.ui:150
-#: src/preferences/pages/edit-shadow.ui:290
-#, fuzzy
-msgid "Spread radius"
-msgstr "Yayılma Yarıçapı"
-
-#: src/preferences/pages/edit-shadow.ui:177
-#: src/preferences/pages/edit-shadow.ui:317
-msgid "Opacity"
-msgstr "Matlık"
-
-#: src/preferences/pages/edit-shadow.ui:206
-#, fuzzy
-msgid "Unfocused shadow preferences"
-msgstr "Tercihleri Sıfırla"
 
 #: src/preferences/pages/general.ui:6
 msgid "General"
 msgstr "Genel"
 
 #: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Uygulamalar"
+msgid "Appearance"
+msgstr ""
 
 #: src/preferences/pages/general.ui:11
-#, fuzzy
 msgid ""
-"Some applications created with LibAdwaita or LibHandy already have rounded "
-"corners. You can enable those settings to avoid rounding their corners an "
-"extra time."
-msgstr ""
-"LibAdwaita veya LibHandy kullanılarak yazılan bazı uygulamalar zaten doğal "
-"yuvarlatılmış köşelere sahiptir, bu nedenle bu ayarlar aracılığıyla bunları "
-"atlayabiliriz"
-
-#: src/preferences/pages/general.ui:14
-#, fuzzy
-msgid "Skip LibAdwaita applications"
-msgstr "LibAdwaita Uygulamalarını Atla"
-
-#: src/preferences/pages/general.ui:19
-#, fuzzy
-msgid "Skip LibHandy applications"
-msgstr "LibHandy Uygulamalarını Atla"
-
-#: src/preferences/pages/general.ui:26
-#, fuzzy
-msgid "Global settings"
-msgstr "Küresel Ayarlar"
-
-#: src/preferences/pages/general.ui:27
-#, fuzzy
-msgid "These settings will have an effect on all windows"
-msgstr "Bu ayarlar tüm pencereleri etkilemeye çalışacaktır"
-
-#: src/preferences/pages/general.ui:30
-#, fuzzy
-msgid "Border width"
-msgstr "Kenarlık Genişliği"
-
-#: src/preferences/pages/general.ui:57 src/preferences/pages/general.ui:65
-#: src/preferences/widgets/custom_settings_row.ts:20
-#, fuzzy
-msgid "Border color"
-msgstr "Kenarlık Rengi"
-
-#: src/preferences/pages/general.ui:74 src/preferences/pages/general.ui:82
-#: src/preferences/widgets/custom_settings_row.ts:28
-#, fuzzy
-msgid "Unfocused border color"
-msgstr "Kenarlık Rengi"
-
-#: src/preferences/pages/general.ui:91
-#: src/preferences/widgets/custom_settings_row.ts:36
-#, fuzzy
-msgid "Corner radius"
-msgstr "Kenarlık Yarıçapı"
-
-#: src/preferences/pages/general.ui:118
-#: src/preferences/widgets/custom_settings_row.ts:46
-#, fuzzy
-msgid "Corner smoothing"
-msgstr "Köşe Düzleştirme"
-
-#: src/preferences/pages/general.ui:144
-#, fuzzy
-msgid "Window shadow"
-msgstr "Pencere Gölgesi"
-
-#: src/preferences/pages/general.ui:145
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Yuvarlak köşeli pencerenin gölgesini özelleştir"
-
-#: src/preferences/pages/general.ui:157
-#, fuzzy
-msgid "Keep shadows for maximized and fullscreen windows"
-msgstr "Tam Ekran Olduğunda Yuvarlatılmış Köşeleri Koru"
-
-#: src/preferences/pages/general.ui:162
-#, fuzzy
-msgid "Keep rounded corners for maximized windows"
-msgstr "Ekranı Kapladığında Yuvarlatılmış Köşeleri Koru"
-
-#: src/preferences/pages/general.ui:167
-#, fuzzy
-msgid "Keep rounded corners for fullscreen windows"
-msgstr "Tam Ekran Olduğunda Yuvarlatılmış Köşeleri Koru"
-
-#: src/preferences/pages/general.ui:177
-#, fuzzy
-msgid "Window margin"
-msgstr "Pencere Gölgesi"
-
-#: src/preferences/pages/general.ui:178
-msgid ""
-"Reserve space around the desktop for maximized and tiled windows without "
-"cropping their contents. Fullscreen windows are unaffected. No extra space "
-"is added between tiled windows. Applies to all applications."
+"Windows get the corners, border, outline, shadow and margin of libadwaita "
+"windows, in each state: normal, maximized, tiled and fullscreen. Change them "
+"in ~/.config/gtk-4.0/gtk.css and every window follows, live. libadwaita apps "
+"are left alone, since they already draw them."
 msgstr ""
 
-#: src/preferences/pages/general.ui:181
-msgid "Enable outer margin"
-msgstr ""
-
-#: src/preferences/pages/general.ui:186
-msgid "Margin size"
-msgstr ""
-
-#: src/preferences/pages/general.ui:187
-msgid "Logical pixels on each outer edge"
-msgstr ""
-
-#: src/preferences/pages/general.ui:203
+#: src/preferences/pages/general.ui:16
 msgid "Tweaks"
 msgstr "İnce Ayarlar"
 
-#: src/preferences/pages/general.ui:206
+#: src/preferences/pages/general.ui:19
 msgid "Hide effects while moving or resizing"
 msgstr ""
 
-#: src/preferences/pages/general.ui:207
+#: src/preferences/pages/general.ui:20
 msgid ""
 "Hide borders, rounded corners and shadows during the operation, then fade "
 "them back together when it ends"
 msgstr ""
 
-#: src/preferences/pages/general.ui:212
-#, fuzzy
-msgid "Add rounded corners to Kitty Terminal on Wayland"
-msgstr "Wayland'da Kitty Terminal'e yuvarlatılmış köşeler eklemeye çalış"
-
-#: src/preferences/pages/general.ui:213
-msgid "Adjust paddings for Kitty Terminal to correctly round its corners"
-msgstr ""
-
-#: src/preferences/pages/general.ui:220
+#: src/preferences/pages/general.ui:27
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
-#: src/preferences/pages/general.ui:223
+#: src/preferences/pages/general.ui:30
 #, fuzzy
 msgid "Enable debug logs"
 msgstr "Günlüğü Etkinleştir"
 
-#: src/preferences/pages/general.ui:224
+#: src/preferences/pages/general.ui:31
 #, fuzzy
 msgid ""
 "Run journalctl -o cat -f /usr/bin/gnome-shell in your terminal to see the log"
 msgstr ""
 "Günlüğü görmek için uçbirimde <i>journalctl -o cat -f /usr/bin/gnome-shell</"
 "i> komutunu çalıştırın"
-
-#: src/preferences/pages/general.ui:233
-#, fuzzy
-msgid "Reset preferences"
-msgstr "Tercihleri Sıfırla"
-
-#: src/preferences/pages/reset.ui:6
-msgid "Reset settings"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:16
-#, fuzzy
-msgid "Settings to reset"
-msgstr "Sıfırlanacak Öğeleri seçin"
-
-#: src/preferences/pages/reset.ui:22
-#, fuzzy
-msgid "Select all"
-msgstr "Tümünü Seç"
-
-#: src/preferences/pages/reset.ui:39
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:55
-msgid "Reset these settings?"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:60
-msgid "_Cancel"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:61
-msgid "_Reset"
-msgstr ""
-
-#: src/preferences/widgets/paddings-row.ui:12
-msgid "Paddings"
-msgstr "Dolgular"
-
-#: src/preferences/widgets/paddings-row.ui:25
-msgid "Top"
-msgstr "Üst"
-
-#: src/preferences/widgets/paddings-row.ui:40
-msgid "Bottom"
-msgstr "Alt"
-
-#: src/preferences/widgets/paddings-row.ui:55
-msgid "Left"
-msgstr "Sol"
-
-#: src/preferences/widgets/paddings-row.ui:70
-msgid "Right"
-msgstr "Sağ"
 
 #: src/preferences/pages/blacklist.ts:62
 #, fuzzy
@@ -342,32 +116,172 @@ msgstr "Bir pencere seçmek için bu sırayı genişlet."
 msgid "Can't pick window from this position"
 msgstr "Bu konumdan bir pencere seçilemez"
 
-#: src/preferences/widgets/custom_settings_row.ts:16
-#, fuzzy
-msgid "Enabled"
-msgstr "Etkinleştir"
+#~ msgid "Custom"
+#~ msgstr "Özel"
 
-#: src/preferences/widgets/custom_settings_row.ts:56
 #, fuzzy
-msgid "Keep rounded corners when maximized"
-msgstr "Ekranı Kapladığında Yuvarlatılmış Köşeleri Koru"
+#~ msgid "Set custom effect setting for each window class"
+#~ msgstr "Bu pencere için özel ayarları etkinleştir"
 
-#: src/preferences/widgets/custom_settings_row.ts:58
 #, fuzzy
-msgid "Always clip rounded corners even if window is maximized or tiled"
-msgstr ""
-"Pencere büyütüldüğünde veya döşendiğinde her zaman yuvarlatılmış köşeleri "
-"koru."
+#~ msgid "Focused window"
+#~ msgstr "Odaklı Pencere"
 
-#: src/preferences/widgets/custom_settings_row.ts:62
 #, fuzzy
-msgid "Keep rounded corners when in fullscreen"
-msgstr "Tam Ekran Olduğunda Yuvarlatılmış Köşeleri Koru"
+#~ msgid "Unfocused window"
+#~ msgstr "Odaklanmamış Pencere"
 
-#: src/preferences/widgets/custom_settings_row.ts:63
 #, fuzzy
-msgid "Always clip rounded corners even for fullscreen window"
-msgstr "Pencere tam ekran olduğunda köşeleri her zaman yuvarlak tut."
+#~ msgid "Focused shadow preferences"
+#~ msgstr "Tercihleri Sıfırla"
+
+#, fuzzy
+#~ msgid "Horizontal offset"
+#~ msgstr "Yatay Konum"
+
+#, fuzzy
+#~ msgid "Vertical offset"
+#~ msgstr "Dikey Konum"
+
+#, fuzzy
+#~ msgid "Blur radius"
+#~ msgstr "Kenarlık Yarıçapı"
+
+#, fuzzy
+#~ msgid "Spread radius"
+#~ msgstr "Yayılma Yarıçapı"
+
+#~ msgid "Opacity"
+#~ msgstr "Matlık"
+
+#, fuzzy
+#~ msgid "Unfocused shadow preferences"
+#~ msgstr "Tercihleri Sıfırla"
+
+#~ msgid "Applications"
+#~ msgstr "Uygulamalar"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some applications created with LibAdwaita or LibHandy already have "
+#~ "rounded corners. You can enable those settings to avoid rounding their "
+#~ "corners an extra time."
+#~ msgstr ""
+#~ "LibAdwaita veya LibHandy kullanılarak yazılan bazı uygulamalar zaten "
+#~ "doğal yuvarlatılmış köşelere sahiptir, bu nedenle bu ayarlar aracılığıyla "
+#~ "bunları atlayabiliriz"
+
+#, fuzzy
+#~ msgid "Skip LibAdwaita applications"
+#~ msgstr "LibAdwaita Uygulamalarını Atla"
+
+#, fuzzy
+#~ msgid "Skip LibHandy applications"
+#~ msgstr "LibHandy Uygulamalarını Atla"
+
+#, fuzzy
+#~ msgid "Global settings"
+#~ msgstr "Küresel Ayarlar"
+
+#, fuzzy
+#~ msgid "These settings will have an effect on all windows"
+#~ msgstr "Bu ayarlar tüm pencereleri etkilemeye çalışacaktır"
+
+#, fuzzy
+#~ msgid "Border width"
+#~ msgstr "Kenarlık Genişliği"
+
+#, fuzzy
+#~ msgid "Border color"
+#~ msgstr "Kenarlık Rengi"
+
+#, fuzzy
+#~ msgid "Unfocused border color"
+#~ msgstr "Kenarlık Rengi"
+
+#, fuzzy
+#~ msgid "Corner radius"
+#~ msgstr "Kenarlık Yarıçapı"
+
+#, fuzzy
+#~ msgid "Corner smoothing"
+#~ msgstr "Köşe Düzleştirme"
+
+#, fuzzy
+#~ msgid "Window shadow"
+#~ msgstr "Pencere Gölgesi"
+
+#~ msgid "Customize the shadow of the rounded corner window"
+#~ msgstr "Yuvarlak köşeli pencerenin gölgesini özelleştir"
+
+#, fuzzy
+#~ msgid "Keep shadows for maximized and fullscreen windows"
+#~ msgstr "Tam Ekran Olduğunda Yuvarlatılmış Köşeleri Koru"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for maximized windows"
+#~ msgstr "Ekranı Kapladığında Yuvarlatılmış Köşeleri Koru"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for fullscreen windows"
+#~ msgstr "Tam Ekran Olduğunda Yuvarlatılmış Köşeleri Koru"
+
+#, fuzzy
+#~ msgid "Window margin"
+#~ msgstr "Pencere Gölgesi"
+
+#, fuzzy
+#~ msgid "Add rounded corners to Kitty Terminal on Wayland"
+#~ msgstr "Wayland'da Kitty Terminal'e yuvarlatılmış köşeler eklemeye çalış"
+
+#, fuzzy
+#~ msgid "Reset preferences"
+#~ msgstr "Tercihleri Sıfırla"
+
+#, fuzzy
+#~ msgid "Settings to reset"
+#~ msgstr "Sıfırlanacak Öğeleri seçin"
+
+#, fuzzy
+#~ msgid "Select all"
+#~ msgstr "Tümünü Seç"
+
+#~ msgid "Paddings"
+#~ msgstr "Dolgular"
+
+#~ msgid "Top"
+#~ msgstr "Üst"
+
+#~ msgid "Bottom"
+#~ msgstr "Alt"
+
+#~ msgid "Left"
+#~ msgstr "Sol"
+
+#~ msgid "Right"
+#~ msgstr "Sağ"
+
+#, fuzzy
+#~ msgid "Enabled"
+#~ msgstr "Etkinleştir"
+
+#, fuzzy
+#~ msgid "Keep rounded corners when maximized"
+#~ msgstr "Ekranı Kapladığında Yuvarlatılmış Köşeleri Koru"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even if window is maximized or tiled"
+#~ msgstr ""
+#~ "Pencere büyütüldüğünde veya döşendiğinde her zaman yuvarlatılmış köşeleri "
+#~ "koru."
+
+#, fuzzy
+#~ msgid "Keep rounded corners when in fullscreen"
+#~ msgstr "Tam Ekran Olduğunda Yuvarlatılmış Köşeleri Koru"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even for fullscreen window"
+#~ msgstr "Pencere tam ekran olduğunda köşeleri her zaman yuvarlak tut."
 
 #~ msgid "Rounded Corners Settings..."
 #~ msgstr "Yuvarlatılmış Köşe Ayarları..."

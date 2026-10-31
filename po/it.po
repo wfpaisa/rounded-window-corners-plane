@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 13:19-0500\n"
+"POT-Creation-Date: 2026-10-31 13:17-0500\n"
 "PO-Revision-Date: 2024-02-25 14:01+0000\n"
 "Last-Translator: repex97 <repetto.andrea025@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/rounded-window-"
@@ -41,282 +41,57 @@ msgid ""
 "windows."
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:25
 #, fuzzy
 msgid "Add window"
 msgstr "Aggiungi Finestra"
-
-#: src/preferences/pages/custom.ui:6 src/preferences/pages/custom.ui:10
-msgid "Custom"
-msgstr "Personalizza"
-
-#: src/preferences/pages/custom.ui:11
-#, fuzzy
-msgid "Set custom effect setting for each window class"
-msgstr "Abilita le impostazioni personalizzate per questa finestra"
-
-#: src/preferences/pages/edit-shadow.ui:6
-msgid "Edit shadows"
-msgstr ""
-
-#: src/preferences/pages/edit-shadow.ui:28
-#, fuzzy
-msgid "Focused window"
-msgstr "Finestra attiva"
-
-#: src/preferences/pages/edit-shadow.ui:43
-#, fuzzy
-msgid "Unfocused window"
-msgstr "Finestra in secondo piano"
-
-#: src/preferences/pages/edit-shadow.ui:66
-#, fuzzy
-msgid "Focused shadow preferences"
-msgstr "Reimposta Preferenze"
-
-#: src/preferences/pages/edit-shadow.ui:69
-#: src/preferences/pages/edit-shadow.ui:209
-#, fuzzy
-msgid "Horizontal offset"
-msgstr "Offset Orizzontale"
-
-#: src/preferences/pages/edit-shadow.ui:96
-#: src/preferences/pages/edit-shadow.ui:236
-#, fuzzy
-msgid "Vertical offset"
-msgstr "Offset Veticale"
-
-#: src/preferences/pages/edit-shadow.ui:123
-#: src/preferences/pages/edit-shadow.ui:263
-#, fuzzy
-msgid "Blur radius"
-msgstr "Raggio del bordo"
-
-#: src/preferences/pages/edit-shadow.ui:150
-#: src/preferences/pages/edit-shadow.ui:290
-#, fuzzy
-msgid "Spread radius"
-msgstr "Raggio"
-
-#: src/preferences/pages/edit-shadow.ui:177
-#: src/preferences/pages/edit-shadow.ui:317
-msgid "Opacity"
-msgstr "Opacità"
-
-#: src/preferences/pages/edit-shadow.ui:206
-#, fuzzy
-msgid "Unfocused shadow preferences"
-msgstr "Reimposta Preferenze"
 
 #: src/preferences/pages/general.ui:6
 msgid "General"
 msgstr "Generale"
 
 #: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Applicazioni"
+msgid "Appearance"
+msgstr ""
 
 #: src/preferences/pages/general.ui:11
-#, fuzzy
 msgid ""
-"Some applications created with LibAdwaita or LibHandy already have rounded "
-"corners. You can enable those settings to avoid rounding their corners an "
-"extra time."
-msgstr ""
-"Alcune applicazioni scritte con LibAdwaita o LibHandy hanno già i bordi "
-"arrotondati, quindi possiamo ignorarli con queste impostazioni"
-
-#: src/preferences/pages/general.ui:14
-#, fuzzy
-msgid "Skip LibAdwaita applications"
-msgstr "Ignora Applicazioni LibAdwaita"
-
-#: src/preferences/pages/general.ui:19
-#, fuzzy
-msgid "Skip LibHandy applications"
-msgstr "Ignora Applicazioni LibHandy"
-
-#: src/preferences/pages/general.ui:26
-#, fuzzy
-msgid "Global settings"
-msgstr "Impostazioni Globali"
-
-#: src/preferences/pages/general.ui:27
-#, fuzzy
-msgid "These settings will have an effect on all windows"
-msgstr "Queste impostazioni avranno possibilmente effetto su tutte le finestre"
-
-#: src/preferences/pages/general.ui:30
-#, fuzzy
-msgid "Border width"
-msgstr "Larghezza del bordo"
-
-#: src/preferences/pages/general.ui:57 src/preferences/pages/general.ui:65
-#: src/preferences/widgets/custom_settings_row.ts:20
-#, fuzzy
-msgid "Border color"
-msgstr "Colore del bordo"
-
-#: src/preferences/pages/general.ui:74 src/preferences/pages/general.ui:82
-#: src/preferences/widgets/custom_settings_row.ts:28
-#, fuzzy
-msgid "Unfocused border color"
-msgstr "Colore del bordo"
-
-#: src/preferences/pages/general.ui:91
-#: src/preferences/widgets/custom_settings_row.ts:36
-#, fuzzy
-msgid "Corner radius"
-msgstr "Raggio del bordo"
-
-#: src/preferences/pages/general.ui:118
-#: src/preferences/widgets/custom_settings_row.ts:46
-#, fuzzy
-msgid "Corner smoothing"
-msgstr "Smussamento del bordo"
-
-#: src/preferences/pages/general.ui:144
-#, fuzzy
-msgid "Window shadow"
-msgstr "Ombra della Finestra"
-
-#: src/preferences/pages/general.ui:145
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Personalizza l'ombra del bordo arrotondato"
-
-#: src/preferences/pages/general.ui:157
-#, fuzzy
-msgid "Keep shadows for maximized and fullscreen windows"
-msgstr "Mantieni I Bordi Arrotondati In Schermo Intero"
-
-#: src/preferences/pages/general.ui:162
-#, fuzzy
-msgid "Keep rounded corners for maximized windows"
-msgstr "Mantieni I Bordi Arrotondati quando Massimizzato"
-
-#: src/preferences/pages/general.ui:167
-#, fuzzy
-msgid "Keep rounded corners for fullscreen windows"
-msgstr "Mantieni I Bordi Arrotondati In Schermo Intero"
-
-#: src/preferences/pages/general.ui:177
-#, fuzzy
-msgid "Window margin"
-msgstr "Ombra della Finestra"
-
-#: src/preferences/pages/general.ui:178
-msgid ""
-"Reserve space around the desktop for maximized and tiled windows without "
-"cropping their contents. Fullscreen windows are unaffected. No extra space "
-"is added between tiled windows. Applies to all applications."
+"Windows get the corners, border, outline, shadow and margin of libadwaita "
+"windows, in each state: normal, maximized, tiled and fullscreen. Change them "
+"in ~/.config/gtk-4.0/gtk.css and every window follows, live. libadwaita apps "
+"are left alone, since they already draw them."
 msgstr ""
 
-#: src/preferences/pages/general.ui:181
-msgid "Enable outer margin"
-msgstr ""
-
-#: src/preferences/pages/general.ui:186
-msgid "Margin size"
-msgstr ""
-
-#: src/preferences/pages/general.ui:187
-msgid "Logical pixels on each outer edge"
-msgstr ""
-
-#: src/preferences/pages/general.ui:203
+#: src/preferences/pages/general.ui:16
 msgid "Tweaks"
 msgstr "Modifiche"
 
-#: src/preferences/pages/general.ui:206
+#: src/preferences/pages/general.ui:19
 msgid "Hide effects while moving or resizing"
 msgstr ""
 
-#: src/preferences/pages/general.ui:207
+#: src/preferences/pages/general.ui:20
 msgid ""
 "Hide borders, rounded corners and shadows during the operation, then fade "
 "them back together when it ends"
 msgstr ""
 
-#: src/preferences/pages/general.ui:212
-#, fuzzy
-msgid "Add rounded corners to Kitty Terminal on Wayland"
-msgstr "Prova ad arrotondare i bordi al terminale Kitty su Wayland"
-
-#: src/preferences/pages/general.ui:213
-msgid "Adjust paddings for Kitty Terminal to correctly round its corners"
-msgstr ""
-
-#: src/preferences/pages/general.ui:220
+#: src/preferences/pages/general.ui:27
 msgid "Debug"
 msgstr "Debug"
 
-#: src/preferences/pages/general.ui:223
+#: src/preferences/pages/general.ui:30
 #, fuzzy
 msgid "Enable debug logs"
 msgstr "Abilita i Log"
 
-#: src/preferences/pages/general.ui:224
+#: src/preferences/pages/general.ui:31
 #, fuzzy
 msgid ""
 "Run journalctl -o cat -f /usr/bin/gnome-shell in your terminal to see the log"
 msgstr ""
 "Esegui <i>journalctl -o cat -f /usr/bin/gnome-shell</i> nel terminale per "
 "vedere i log"
-
-#: src/preferences/pages/general.ui:233
-#, fuzzy
-msgid "Reset preferences"
-msgstr "Reimposta Preferenze"
-
-#: src/preferences/pages/reset.ui:6
-msgid "Reset settings"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:16
-#, fuzzy
-msgid "Settings to reset"
-msgstr "Seleziona Item da reimpostare"
-
-#: src/preferences/pages/reset.ui:22
-#, fuzzy
-msgid "Select all"
-msgstr "Seleziona Tutto"
-
-#: src/preferences/pages/reset.ui:39
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:55
-msgid "Reset these settings?"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:60
-msgid "_Cancel"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:61
-msgid "_Reset"
-msgstr ""
-
-#: src/preferences/widgets/paddings-row.ui:12
-msgid "Paddings"
-msgstr "Paddings"
-
-#: src/preferences/widgets/paddings-row.ui:25
-msgid "Top"
-msgstr "Sopra"
-
-#: src/preferences/widgets/paddings-row.ui:40
-msgid "Bottom"
-msgstr "Sotto"
-
-#: src/preferences/widgets/paddings-row.ui:55
-msgid "Left"
-msgstr "Sinistra"
-
-#: src/preferences/widgets/paddings-row.ui:70
-msgid "Right"
-msgstr "Destra"
 
 #: src/preferences/pages/blacklist.ts:62
 #, fuzzy
@@ -342,30 +117,170 @@ msgstr "Espandi questa riga per selezionare una finestra."
 msgid "Can't pick window from this position"
 msgstr "Impossibile selezionare la finestra da questa posizione"
 
-#: src/preferences/widgets/custom_settings_row.ts:16
-#, fuzzy
-msgid "Enabled"
-msgstr "Abilita"
+#~ msgid "Custom"
+#~ msgstr "Personalizza"
 
-#: src/preferences/widgets/custom_settings_row.ts:56
 #, fuzzy
-msgid "Keep rounded corners when maximized"
-msgstr "Mantieni I Bordi Arrotondati quando Massimizzato"
+#~ msgid "Set custom effect setting for each window class"
+#~ msgstr "Abilita le impostazioni personalizzate per questa finestra"
 
-#: src/preferences/widgets/custom_settings_row.ts:58
 #, fuzzy
-msgid "Always clip rounded corners even if window is maximized or tiled"
-msgstr "Tieni i bordi arrotondati quando la finestra è massimizzata."
+#~ msgid "Focused window"
+#~ msgstr "Finestra attiva"
 
-#: src/preferences/widgets/custom_settings_row.ts:62
 #, fuzzy
-msgid "Keep rounded corners when in fullscreen"
-msgstr "Mantieni I Bordi Arrotondati In Schermo Intero"
+#~ msgid "Unfocused window"
+#~ msgstr "Finestra in secondo piano"
 
-#: src/preferences/widgets/custom_settings_row.ts:63
 #, fuzzy
-msgid "Always clip rounded corners even for fullscreen window"
-msgstr "Tieni i bordi arrotondati quando la finestra è a schermo intero."
+#~ msgid "Focused shadow preferences"
+#~ msgstr "Reimposta Preferenze"
+
+#, fuzzy
+#~ msgid "Horizontal offset"
+#~ msgstr "Offset Orizzontale"
+
+#, fuzzy
+#~ msgid "Vertical offset"
+#~ msgstr "Offset Veticale"
+
+#, fuzzy
+#~ msgid "Blur radius"
+#~ msgstr "Raggio del bordo"
+
+#, fuzzy
+#~ msgid "Spread radius"
+#~ msgstr "Raggio"
+
+#~ msgid "Opacity"
+#~ msgstr "Opacità"
+
+#, fuzzy
+#~ msgid "Unfocused shadow preferences"
+#~ msgstr "Reimposta Preferenze"
+
+#~ msgid "Applications"
+#~ msgstr "Applicazioni"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some applications created with LibAdwaita or LibHandy already have "
+#~ "rounded corners. You can enable those settings to avoid rounding their "
+#~ "corners an extra time."
+#~ msgstr ""
+#~ "Alcune applicazioni scritte con LibAdwaita o LibHandy hanno già i bordi "
+#~ "arrotondati, quindi possiamo ignorarli con queste impostazioni"
+
+#, fuzzy
+#~ msgid "Skip LibAdwaita applications"
+#~ msgstr "Ignora Applicazioni LibAdwaita"
+
+#, fuzzy
+#~ msgid "Skip LibHandy applications"
+#~ msgstr "Ignora Applicazioni LibHandy"
+
+#, fuzzy
+#~ msgid "Global settings"
+#~ msgstr "Impostazioni Globali"
+
+#, fuzzy
+#~ msgid "These settings will have an effect on all windows"
+#~ msgstr ""
+#~ "Queste impostazioni avranno possibilmente effetto su tutte le finestre"
+
+#, fuzzy
+#~ msgid "Border width"
+#~ msgstr "Larghezza del bordo"
+
+#, fuzzy
+#~ msgid "Border color"
+#~ msgstr "Colore del bordo"
+
+#, fuzzy
+#~ msgid "Unfocused border color"
+#~ msgstr "Colore del bordo"
+
+#, fuzzy
+#~ msgid "Corner radius"
+#~ msgstr "Raggio del bordo"
+
+#, fuzzy
+#~ msgid "Corner smoothing"
+#~ msgstr "Smussamento del bordo"
+
+#, fuzzy
+#~ msgid "Window shadow"
+#~ msgstr "Ombra della Finestra"
+
+#~ msgid "Customize the shadow of the rounded corner window"
+#~ msgstr "Personalizza l'ombra del bordo arrotondato"
+
+#, fuzzy
+#~ msgid "Keep shadows for maximized and fullscreen windows"
+#~ msgstr "Mantieni I Bordi Arrotondati In Schermo Intero"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for maximized windows"
+#~ msgstr "Mantieni I Bordi Arrotondati quando Massimizzato"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for fullscreen windows"
+#~ msgstr "Mantieni I Bordi Arrotondati In Schermo Intero"
+
+#, fuzzy
+#~ msgid "Window margin"
+#~ msgstr "Ombra della Finestra"
+
+#, fuzzy
+#~ msgid "Add rounded corners to Kitty Terminal on Wayland"
+#~ msgstr "Prova ad arrotondare i bordi al terminale Kitty su Wayland"
+
+#, fuzzy
+#~ msgid "Reset preferences"
+#~ msgstr "Reimposta Preferenze"
+
+#, fuzzy
+#~ msgid "Settings to reset"
+#~ msgstr "Seleziona Item da reimpostare"
+
+#, fuzzy
+#~ msgid "Select all"
+#~ msgstr "Seleziona Tutto"
+
+#~ msgid "Paddings"
+#~ msgstr "Paddings"
+
+#~ msgid "Top"
+#~ msgstr "Sopra"
+
+#~ msgid "Bottom"
+#~ msgstr "Sotto"
+
+#~ msgid "Left"
+#~ msgstr "Sinistra"
+
+#~ msgid "Right"
+#~ msgstr "Destra"
+
+#, fuzzy
+#~ msgid "Enabled"
+#~ msgstr "Abilita"
+
+#, fuzzy
+#~ msgid "Keep rounded corners when maximized"
+#~ msgstr "Mantieni I Bordi Arrotondati quando Massimizzato"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even if window is maximized or tiled"
+#~ msgstr "Tieni i bordi arrotondati quando la finestra è massimizzata."
+
+#, fuzzy
+#~ msgid "Keep rounded corners when in fullscreen"
+#~ msgstr "Mantieni I Bordi Arrotondati In Schermo Intero"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even for fullscreen window"
+#~ msgstr "Tieni i bordi arrotondati quando la finestra è a schermo intero."
 
 #~ msgid "Rounded Corners Settings..."
 #~ msgstr "Impostazioni per i Bordi Arrotondati..."

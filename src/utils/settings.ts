@@ -6,11 +6,6 @@
 
 import type Gio from 'gi://Gio';
 import type GObject from 'gi://GObject';
-import type {
-    BoxShadow,
-    CustomRoundedCornerSettings,
-    RoundedCornerSettings,
-} from './types.js';
 
 import GLib from 'gi://GLib';
 
@@ -19,20 +14,8 @@ type Schema = {
     'settings-version': number;
     blacklist: string[];
     whitelist: boolean;
-    'skip-libadwaita-app': boolean;
-    'skip-libhandy-app': boolean;
-    'border-width': number;
     'suspend-during-interaction': boolean;
-    'window-margin-enabled': boolean;
-    'window-margin': number;
-    'global-rounded-corner-settings': RoundedCornerSettings;
-    'custom-rounded-corner-settings': CustomRoundedCornerSettings;
-    'focused-shadow': BoxShadow;
-    'unfocused-shadow': BoxShadow;
-    'keep-shadow-for-maximized-fullscreen': boolean;
-    'vram-budget': number;
     'debug-mode': boolean;
-    'tweak-kitty-terminal': boolean;
 };
 
 /** All existing schema keys. */
@@ -43,20 +26,8 @@ export const Schema = {
     'settings-version': 'u',
     blacklist: 'as',
     whitelist: 'b',
-    'skip-libadwaita-app': 'b',
-    'skip-libhandy-app': 'b',
-    'border-width': 'i',
     'suspend-during-interaction': 'b',
-    'window-margin-enabled': 'b',
-    'window-margin': 'i',
-    'global-rounded-corner-settings': 'a{sv}',
-    'custom-rounded-corner-settings': 'a{sv}',
-    'focused-shadow': 'a{si}',
-    'unfocused-shadow': 'a{si}',
-    'keep-shadow-for-maximized-fullscreen': 'b',
-    'vram-budget': 'i',
     'debug-mode': 'b',
-    'tweak-kitty-terminal': 'b',
 };
 
 /** The raw GSettings object for direct manipulation. */
@@ -65,10 +36,13 @@ export let prefs: Gio.Settings;
 /**
  * Initialize the {@link prefs} object with existing GSettings.
  *
+ * The look of the windows comes from GTK's stylesheets since settings
+ * version 11, so the settings of older versions for it are gone from the
+ * schema and need no migration.
+ *
  * @param gSettings - GSettings to initialize the prefs with.
  */
 export function initPrefs(gSettings: Gio.Settings) {
-    resetOutdated(gSettings);
     prefs = gSettings;
 }
 
@@ -95,21 +69,9 @@ export function getPref<K extends SchemaKey>(key: K) {
  * @param value - The value to set the preference to.
  */
 export function setPref<K extends SchemaKey>(key: K, value: Schema[K]) {
-    let variant: GLib.Variant;
-
-    if (key === 'global-rounded-corner-settings') {
-        variant = packRoundedCornerSettings(value as RoundedCornerSettings);
-    } else if (key === 'custom-rounded-corner-settings') {
-        variant = packCustomRoundedCornerSettings(
-            value as CustomRoundedCornerSettings,
-        );
-    } else {
-        // @ts-expect-error
-        // TypeScript can't figure out that the value will always match the glib schema type here
-        variant = new GLib.Variant(Schema[key], value);
-    }
-
-    prefs.set_value(key, variant);
+    // @ts-expect-error
+    // TypeScript can't figure out that the value will always match the glib schema type here
+    prefs.set_value(key, new GLib.Variant(Schema[key], value));
 }
 
 /** A simple type-checked wrapper around {@link prefs.bind} */
@@ -121,143 +83,4 @@ export function bindPref(
 ) {
     // @ts-expect-error: TODO https://github.com/gjsify/ts-for-gir/issues/431
     prefs.bind(key, object, property, flags);
-}
-
-/**
- * Reset setting keys that changed their type between releases
- * to avoid conflicts.
- *
- * @param prefs the GSettings object to clean.
- */
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: The function is inherently a huge if block.
-function resetOutdated(prefs: Gio.Settings) {
-    const lastVersion = 10;
-    const prefsCurrentVersion = prefs
-        .get_user_value('settings-version')
-        ?.recursiveUnpack() as number | undefined;
-    const currentVersion = prefsCurrentVersion ?? 0;
-
-    if (currentVersion < lastVersion) {
-        if (currentVersion < 7) {
-            if (prefs.list_keys().includes('black-list')) {
-                prefs.reset('black-list');
-            }
-            prefs.reset('global-rounded-corner-settings');
-            prefs.reset('custom-rounded-corner-settings');
-            if (prefs.list_keys().includes('border-color')) {
-                prefs.reset('border-color');
-            }
-            prefs.reset('focused-shadow');
-            prefs.reset('unfocused-shadow');
-        }
-
-        if (currentVersion < 8) {
-            const roundedCornerSettings = prefs
-                .get_value('global-rounded-corner-settings')
-                .recursiveUnpack() as RoundedCornerSettings;
-            if (roundedCornerSettings.borderRadius === 12) {
-                roundedCornerSettings.borderRadius = 15;
-                prefs.set_value(
-                    'global-rounded-corner-settings',
-                    packRoundedCornerSettings(roundedCornerSettings),
-                );
-            }
-        }
-
-        if (currentVersion < 9) {
-            // biome-ignore lint/style/useCollapsedIf: Match the format of other checks
-            if (prefs.list_keys().includes('enable-preferences-entry')) {
-                prefs.reset('enable-preferences-entry');
-            }
-        }
-
-        if (currentVersion < 10) {
-            // Keep the current look: unfocused borders start with the same
-            // color as focused ones.
-            const global = prefs
-                .get_value('global-rounded-corner-settings')
-                .recursiveUnpack() as RoundedCornerSettings;
-            global.unfocusedBorderColor ??= global.borderColor;
-            prefs.set_value(
-                'global-rounded-corner-settings',
-                packRoundedCornerSettings(global),
-            );
-
-            const custom = prefs
-                .get_value('custom-rounded-corner-settings')
-                .recursiveUnpack() as CustomRoundedCornerSettings;
-            for (const cfg of Object.values(custom)) {
-                cfg.unfocusedBorderColor ??= cfg.borderColor;
-            }
-            prefs.set_value(
-                'custom-rounded-corner-settings',
-                packCustomRoundedCornerSettings(custom),
-            );
-        }
-
-        prefs.set_uint('settings-version', lastVersion);
-    }
-}
-
-/**
- * Pack rounded corner settings into a GLib Variant object.
- *
- * Since rounded corner settings are stored as a dictionary where the values
- * are of different types, it can't be automatically packed into a variant.
- * Instead, we need to pack each of the values into the correct variant
- * type, and only then pack the entire dictionary into a variant with type
- * "a{sv}" (dictionary with string keys and arbitrary variant values).
- *
- * @param settings - The rounded corner settings to pack.
- * @returns The packed GLib Variant object.
- */
-function packRoundedCornerSettings(settings: RoundedCornerSettings) {
-    const padding = new GLib.Variant('a{su}', settings.padding);
-    const keepRoundedCorners = new GLib.Variant(
-        'a{sb}',
-        settings.keepRoundedCorners,
-    );
-    const borderRadius = GLib.Variant.new_uint32(settings.borderRadius);
-    const smoothing = GLib.Variant.new_double(settings.smoothing);
-    const borderColor = new GLib.Variant('(dddd)', settings.borderColor);
-    const unfocusedBorderColor = new GLib.Variant(
-        '(dddd)',
-        settings.unfocusedBorderColor,
-    );
-    const enabled = GLib.Variant.new_boolean(settings.enabled);
-
-    const variantObject = {
-        padding,
-        keepRoundedCorners,
-        borderRadius,
-        smoothing,
-        borderColor,
-        unfocusedBorderColor,
-        enabled,
-    };
-
-    return new GLib.Variant('a{sv}', variantObject);
-}
-
-/**
- * Pack custom rounded corner overrides into a GLib Variant object.
- *
- * Custom rounded corner settings are stored as a dictionary from window
- * wm_class to {@link RoundedCornerSettings} objects. See the documentation for
- * {@link packRoundedCornerSettings} for more information on why manual packing
- * is needed here.
- *
- * @param settings - The custom rounded corner setting overrides to pack.
- * @returns The packed GLib Variant object.
- */
-function packCustomRoundedCornerSettings(
-    settings: CustomRoundedCornerSettings,
-) {
-    const packedSettings: Record<string, GLib.Variant<'a{sv}'>> = {};
-    for (const [wmClass, windowSettings] of Object.entries(settings)) {
-        packedSettings[wmClass] = packRoundedCornerSettings(windowSettings);
-    }
-
-    const variant = new GLib.Variant('a{sv}', packedSettings);
-    return variant;
 }

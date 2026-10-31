@@ -11,8 +11,7 @@ Contains a `prefsTabs` variable that lists all of the tabs to be initialized.
 
 ## `pages`
 
-This directory contains the code for each of the tabs, as well as the subpages
-for editing the shadow and resetting the settings.
+This directory contains the code for each of the tabs.
 
 ## `widgets`
 

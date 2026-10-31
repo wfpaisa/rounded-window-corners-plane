@@ -1,6 +1,6 @@
 {
     "name": "Rounded Window Corners Plane",
-    "description": "Add rounded corners to all windows. Fork of Rounded Window Corners Reborn with sharp fractional scaling, unfocused border colors and support for deforming effects.",
+    "description": "Gives every window the rounded corners, border, outline, shadow and margin of libadwaita windows, read from libadwaita's stylesheet and your ~/.config/gtk-4.0/gtk.css, in every window state. Works with effects that deform windows, like wobbly windows.",
     "uuid": "rounded-window-corners-plane@wfpaisa",
     "url": "https://github.com/wfpaisa/rounded-window-corners-plane",
     "gettext-domain": "rounded-window-corners-plane@wfpaisa",

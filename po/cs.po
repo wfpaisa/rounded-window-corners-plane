@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 13:19-0500\n"
+"POT-Creation-Date: 2026-10-31 13:17-0500\n"
 "PO-Revision-Date: 2023-04-25 17:52+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/rounded-window-"
@@ -41,282 +41,57 @@ msgid ""
 "windows."
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:25
 #, fuzzy
 msgid "Add window"
 msgstr "Přidat okno"
-
-#: src/preferences/pages/custom.ui:6 src/preferences/pages/custom.ui:10
-msgid "Custom"
-msgstr "Vlastní"
-
-#: src/preferences/pages/custom.ui:11
-#, fuzzy
-msgid "Set custom effect setting for each window class"
-msgstr "Povolit vlastní nastavení tohoto okna"
-
-#: src/preferences/pages/edit-shadow.ui:6
-msgid "Edit shadows"
-msgstr ""
-
-#: src/preferences/pages/edit-shadow.ui:28
-#, fuzzy
-msgid "Focused window"
-msgstr "Zaměření okna"
-
-#: src/preferences/pages/edit-shadow.ui:43
-#, fuzzy
-msgid "Unfocused window"
-msgstr "Okno bez zaměření"
-
-#: src/preferences/pages/edit-shadow.ui:66
-#, fuzzy
-msgid "Focused shadow preferences"
-msgstr "Obnovit předvolby"
-
-#: src/preferences/pages/edit-shadow.ui:69
-#: src/preferences/pages/edit-shadow.ui:209
-#, fuzzy
-msgid "Horizontal offset"
-msgstr "Horizontální posun"
-
-#: src/preferences/pages/edit-shadow.ui:96
-#: src/preferences/pages/edit-shadow.ui:236
-#, fuzzy
-msgid "Vertical offset"
-msgstr "Vertikální posun"
-
-#: src/preferences/pages/edit-shadow.ui:123
-#: src/preferences/pages/edit-shadow.ui:263
-#, fuzzy
-msgid "Blur radius"
-msgstr "Poloměr okraje"
-
-#: src/preferences/pages/edit-shadow.ui:150
-#: src/preferences/pages/edit-shadow.ui:290
-#, fuzzy
-msgid "Spread radius"
-msgstr "Poloměr rozptylu"
-
-#: src/preferences/pages/edit-shadow.ui:177
-#: src/preferences/pages/edit-shadow.ui:317
-msgid "Opacity"
-msgstr "Neprůhlednost"
-
-#: src/preferences/pages/edit-shadow.ui:206
-#, fuzzy
-msgid "Unfocused shadow preferences"
-msgstr "Obnovit předvolby"
 
 #: src/preferences/pages/general.ui:6
 msgid "General"
 msgstr "Obecné"
 
 #: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Aplikace"
+msgid "Appearance"
+msgstr ""
 
 #: src/preferences/pages/general.ui:11
-#, fuzzy
 msgid ""
-"Some applications created with LibAdwaita or LibHandy already have rounded "
-"corners. You can enable those settings to avoid rounding their corners an "
-"extra time."
-msgstr ""
-"Některé aplikace napsané pomocí LibAdwaita nebo LibHandy již mají nativní "
-"zaoblené rohy, takže je můžeme přeskočit pomocí těchto nastavení"
-
-#: src/preferences/pages/general.ui:14
-#, fuzzy
-msgid "Skip LibAdwaita applications"
-msgstr "Přeskočit aplikace LibAdwaita"
-
-#: src/preferences/pages/general.ui:19
-#, fuzzy
-msgid "Skip LibHandy applications"
-msgstr "Přeskočit aplikace LibHandy"
-
-#: src/preferences/pages/general.ui:26
-#, fuzzy
-msgid "Global settings"
-msgstr "Globální nastavení"
-
-#: src/preferences/pages/general.ui:27
-#, fuzzy
-msgid "These settings will have an effect on all windows"
-msgstr "Toto nastavení se pokusí ovlivnit všechna okna"
-
-#: src/preferences/pages/general.ui:30
-#, fuzzy
-msgid "Border width"
-msgstr "Šířka okraje"
-
-#: src/preferences/pages/general.ui:57 src/preferences/pages/general.ui:65
-#: src/preferences/widgets/custom_settings_row.ts:20
-#, fuzzy
-msgid "Border color"
-msgstr "Barva okraje"
-
-#: src/preferences/pages/general.ui:74 src/preferences/pages/general.ui:82
-#: src/preferences/widgets/custom_settings_row.ts:28
-#, fuzzy
-msgid "Unfocused border color"
-msgstr "Barva okraje"
-
-#: src/preferences/pages/general.ui:91
-#: src/preferences/widgets/custom_settings_row.ts:36
-#, fuzzy
-msgid "Corner radius"
-msgstr "Poloměr okraje"
-
-#: src/preferences/pages/general.ui:118
-#: src/preferences/widgets/custom_settings_row.ts:46
-#, fuzzy
-msgid "Corner smoothing"
-msgstr "Vyhlazování rohů"
-
-#: src/preferences/pages/general.ui:144
-#, fuzzy
-msgid "Window shadow"
-msgstr "Stín okna"
-
-#: src/preferences/pages/general.ui:145
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Přizpůsobení stínu zaobleného rohu okna"
-
-#: src/preferences/pages/general.ui:157
-#, fuzzy
-msgid "Keep shadows for maximized and fullscreen windows"
-msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
-
-#: src/preferences/pages/general.ui:162
-#, fuzzy
-msgid "Keep rounded corners for maximized windows"
-msgstr "Zachovat zaoblené rohy při maximalizaci"
-
-#: src/preferences/pages/general.ui:167
-#, fuzzy
-msgid "Keep rounded corners for fullscreen windows"
-msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
-
-#: src/preferences/pages/general.ui:177
-#, fuzzy
-msgid "Window margin"
-msgstr "Stín okna"
-
-#: src/preferences/pages/general.ui:178
-msgid ""
-"Reserve space around the desktop for maximized and tiled windows without "
-"cropping their contents. Fullscreen windows are unaffected. No extra space "
-"is added between tiled windows. Applies to all applications."
+"Windows get the corners, border, outline, shadow and margin of libadwaita "
+"windows, in each state: normal, maximized, tiled and fullscreen. Change them "
+"in ~/.config/gtk-4.0/gtk.css and every window follows, live. libadwaita apps "
+"are left alone, since they already draw them."
 msgstr ""
 
-#: src/preferences/pages/general.ui:181
-msgid "Enable outer margin"
-msgstr ""
-
-#: src/preferences/pages/general.ui:186
-msgid "Margin size"
-msgstr ""
-
-#: src/preferences/pages/general.ui:187
-msgid "Logical pixels on each outer edge"
-msgstr ""
-
-#: src/preferences/pages/general.ui:203
+#: src/preferences/pages/general.ui:16
 msgid "Tweaks"
 msgstr "Vylepšení"
 
-#: src/preferences/pages/general.ui:206
+#: src/preferences/pages/general.ui:19
 msgid "Hide effects while moving or resizing"
 msgstr ""
 
-#: src/preferences/pages/general.ui:207
+#: src/preferences/pages/general.ui:20
 msgid ""
 "Hide borders, rounded corners and shadows during the operation, then fade "
 "them back together when it ends"
 msgstr ""
 
-#: src/preferences/pages/general.ui:212
-#, fuzzy
-msgid "Add rounded corners to Kitty Terminal on Wayland"
-msgstr "Pokusit se přidat zaoblené rohy do aplikace Kitty Terminal ve Waylandu"
-
-#: src/preferences/pages/general.ui:213
-msgid "Adjust paddings for Kitty Terminal to correctly round its corners"
-msgstr ""
-
-#: src/preferences/pages/general.ui:220
+#: src/preferences/pages/general.ui:27
 msgid "Debug"
 msgstr "Ladění"
 
-#: src/preferences/pages/general.ui:223
+#: src/preferences/pages/general.ui:30
 #, fuzzy
 msgid "Enable debug logs"
 msgstr "Povolit protokol"
 
-#: src/preferences/pages/general.ui:224
+#: src/preferences/pages/general.ui:31
 #, fuzzy
 msgid ""
 "Run journalctl -o cat -f /usr/bin/gnome-shell in your terminal to see the log"
 msgstr ""
 "Pro zobrazení protokolu spusťte v terminálu příkaz <i>journalctl -o cat -f /"
 "usr/bin/gnome-shell</i>"
-
-#: src/preferences/pages/general.ui:233
-#, fuzzy
-msgid "Reset preferences"
-msgstr "Obnovit předvolby"
-
-#: src/preferences/pages/reset.ui:6
-msgid "Reset settings"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:16
-#, fuzzy
-msgid "Settings to reset"
-msgstr "Vyberte položky, které chcete resetovat"
-
-#: src/preferences/pages/reset.ui:22
-#, fuzzy
-msgid "Select all"
-msgstr "Vybrat vše"
-
-#: src/preferences/pages/reset.ui:39
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:55
-msgid "Reset these settings?"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:60
-msgid "_Cancel"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:61
-msgid "_Reset"
-msgstr ""
-
-#: src/preferences/widgets/paddings-row.ui:12
-msgid "Paddings"
-msgstr "Výplně"
-
-#: src/preferences/widgets/paddings-row.ui:25
-msgid "Top"
-msgstr "Nahoře"
-
-#: src/preferences/widgets/paddings-row.ui:40
-msgid "Bottom"
-msgstr "Spodní"
-
-#: src/preferences/widgets/paddings-row.ui:55
-msgid "Left"
-msgstr "Vlevo"
-
-#: src/preferences/widgets/paddings-row.ui:70
-msgid "Right"
-msgstr "Vpravo"
 
 #: src/preferences/pages/blacklist.ts:62
 #, fuzzy
@@ -342,30 +117,171 @@ msgstr "Rozbalte tento řádek a vyberte okno."
 msgid "Can't pick window from this position"
 msgstr "Nelze vybrat okno z této pozice"
 
-#: src/preferences/widgets/custom_settings_row.ts:16
-#, fuzzy
-msgid "Enabled"
-msgstr "Povolit"
+#~ msgid "Custom"
+#~ msgstr "Vlastní"
 
-#: src/preferences/widgets/custom_settings_row.ts:56
 #, fuzzy
-msgid "Keep rounded corners when maximized"
-msgstr "Zachovat zaoblené rohy při maximalizaci"
+#~ msgid "Set custom effect setting for each window class"
+#~ msgstr "Povolit vlastní nastavení tohoto okna"
 
-#: src/preferences/widgets/custom_settings_row.ts:58
 #, fuzzy
-msgid "Always clip rounded corners even if window is maximized or tiled"
-msgstr "Při maximalizovaném okně nebo dlaždicích vždy zachovat zaoblené rohy."
+#~ msgid "Focused window"
+#~ msgstr "Zaměření okna"
 
-#: src/preferences/widgets/custom_settings_row.ts:62
 #, fuzzy
-msgid "Keep rounded corners when in fullscreen"
-msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
+#~ msgid "Unfocused window"
+#~ msgstr "Okno bez zaměření"
 
-#: src/preferences/widgets/custom_settings_row.ts:63
 #, fuzzy
-msgid "Always clip rounded corners even for fullscreen window"
-msgstr "Při zobrazení okna na celou obrazovku vždy zachovat zaoblené rohy."
+#~ msgid "Focused shadow preferences"
+#~ msgstr "Obnovit předvolby"
+
+#, fuzzy
+#~ msgid "Horizontal offset"
+#~ msgstr "Horizontální posun"
+
+#, fuzzy
+#~ msgid "Vertical offset"
+#~ msgstr "Vertikální posun"
+
+#, fuzzy
+#~ msgid "Blur radius"
+#~ msgstr "Poloměr okraje"
+
+#, fuzzy
+#~ msgid "Spread radius"
+#~ msgstr "Poloměr rozptylu"
+
+#~ msgid "Opacity"
+#~ msgstr "Neprůhlednost"
+
+#, fuzzy
+#~ msgid "Unfocused shadow preferences"
+#~ msgstr "Obnovit předvolby"
+
+#~ msgid "Applications"
+#~ msgstr "Aplikace"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some applications created with LibAdwaita or LibHandy already have "
+#~ "rounded corners. You can enable those settings to avoid rounding their "
+#~ "corners an extra time."
+#~ msgstr ""
+#~ "Některé aplikace napsané pomocí LibAdwaita nebo LibHandy již mají nativní "
+#~ "zaoblené rohy, takže je můžeme přeskočit pomocí těchto nastavení"
+
+#, fuzzy
+#~ msgid "Skip LibAdwaita applications"
+#~ msgstr "Přeskočit aplikace LibAdwaita"
+
+#, fuzzy
+#~ msgid "Skip LibHandy applications"
+#~ msgstr "Přeskočit aplikace LibHandy"
+
+#, fuzzy
+#~ msgid "Global settings"
+#~ msgstr "Globální nastavení"
+
+#, fuzzy
+#~ msgid "These settings will have an effect on all windows"
+#~ msgstr "Toto nastavení se pokusí ovlivnit všechna okna"
+
+#, fuzzy
+#~ msgid "Border width"
+#~ msgstr "Šířka okraje"
+
+#, fuzzy
+#~ msgid "Border color"
+#~ msgstr "Barva okraje"
+
+#, fuzzy
+#~ msgid "Unfocused border color"
+#~ msgstr "Barva okraje"
+
+#, fuzzy
+#~ msgid "Corner radius"
+#~ msgstr "Poloměr okraje"
+
+#, fuzzy
+#~ msgid "Corner smoothing"
+#~ msgstr "Vyhlazování rohů"
+
+#, fuzzy
+#~ msgid "Window shadow"
+#~ msgstr "Stín okna"
+
+#~ msgid "Customize the shadow of the rounded corner window"
+#~ msgstr "Přizpůsobení stínu zaobleného rohu okna"
+
+#, fuzzy
+#~ msgid "Keep shadows for maximized and fullscreen windows"
+#~ msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for maximized windows"
+#~ msgstr "Zachovat zaoblené rohy při maximalizaci"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for fullscreen windows"
+#~ msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
+
+#, fuzzy
+#~ msgid "Window margin"
+#~ msgstr "Stín okna"
+
+#, fuzzy
+#~ msgid "Add rounded corners to Kitty Terminal on Wayland"
+#~ msgstr ""
+#~ "Pokusit se přidat zaoblené rohy do aplikace Kitty Terminal ve Waylandu"
+
+#, fuzzy
+#~ msgid "Reset preferences"
+#~ msgstr "Obnovit předvolby"
+
+#, fuzzy
+#~ msgid "Settings to reset"
+#~ msgstr "Vyberte položky, které chcete resetovat"
+
+#, fuzzy
+#~ msgid "Select all"
+#~ msgstr "Vybrat vše"
+
+#~ msgid "Paddings"
+#~ msgstr "Výplně"
+
+#~ msgid "Top"
+#~ msgstr "Nahoře"
+
+#~ msgid "Bottom"
+#~ msgstr "Spodní"
+
+#~ msgid "Left"
+#~ msgstr "Vlevo"
+
+#~ msgid "Right"
+#~ msgstr "Vpravo"
+
+#, fuzzy
+#~ msgid "Enabled"
+#~ msgstr "Povolit"
+
+#, fuzzy
+#~ msgid "Keep rounded corners when maximized"
+#~ msgstr "Zachovat zaoblené rohy při maximalizaci"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even if window is maximized or tiled"
+#~ msgstr ""
+#~ "Při maximalizovaném okně nebo dlaždicích vždy zachovat zaoblené rohy."
+
+#, fuzzy
+#~ msgid "Keep rounded corners when in fullscreen"
+#~ msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even for fullscreen window"
+#~ msgstr "Při zobrazení okna na celou obrazovku vždy zachovat zaoblené rohy."
 
 #~ msgid "Rounded Corners Settings..."
 #~ msgstr "Nastavení zaoblených rohů..."

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 13:19-0500\n"
+"POT-Creation-Date: 2026-10-31 13:17-0500\n"
 "PO-Revision-Date: 2023-03-02 12:35+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/rounded-window-"
@@ -40,282 +40,57 @@ msgid ""
 "windows."
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:25
 #, fuzzy
 msgid "Add window"
 msgstr "Venster toevoegen"
-
-#: src/preferences/pages/custom.ui:6 src/preferences/pages/custom.ui:10
-msgid "Custom"
-msgstr "Aangepast"
-
-#: src/preferences/pages/custom.ui:11
-#, fuzzy
-msgid "Set custom effect setting for each window class"
-msgstr "Gebruik aangepaste voorkeuren in dit venster"
-
-#: src/preferences/pages/edit-shadow.ui:6
-msgid "Edit shadows"
-msgstr ""
-
-#: src/preferences/pages/edit-shadow.ui:28
-#, fuzzy
-msgid "Focused window"
-msgstr "Vensterfocus"
-
-#: src/preferences/pages/edit-shadow.ui:43
-#, fuzzy
-msgid "Unfocused window"
-msgstr "Ongefocust venster"
-
-#: src/preferences/pages/edit-shadow.ui:66
-#, fuzzy
-msgid "Focused shadow preferences"
-msgstr "Voorkeuren herstellen"
-
-#: src/preferences/pages/edit-shadow.ui:69
-#: src/preferences/pages/edit-shadow.ui:209
-#, fuzzy
-msgid "Horizontal offset"
-msgstr "Horizontale verschuiving"
-
-#: src/preferences/pages/edit-shadow.ui:96
-#: src/preferences/pages/edit-shadow.ui:236
-#, fuzzy
-msgid "Vertical offset"
-msgstr "Verticale verschuiving"
-
-#: src/preferences/pages/edit-shadow.ui:123
-#: src/preferences/pages/edit-shadow.ui:263
-#, fuzzy
-msgid "Blur radius"
-msgstr "Randstraal"
-
-#: src/preferences/pages/edit-shadow.ui:150
-#: src/preferences/pages/edit-shadow.ui:290
-#, fuzzy
-msgid "Spread radius"
-msgstr "Verspreiding"
-
-#: src/preferences/pages/edit-shadow.ui:177
-#: src/preferences/pages/edit-shadow.ui:317
-msgid "Opacity"
-msgstr "Doorzichtigheid"
-
-#: src/preferences/pages/edit-shadow.ui:206
-#, fuzzy
-msgid "Unfocused shadow preferences"
-msgstr "Voorkeuren herstellen"
 
 #: src/preferences/pages/general.ui:6
 msgid "General"
 msgstr "Algemeen"
 
 #: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Apps"
+msgid "Appearance"
+msgstr ""
 
 #: src/preferences/pages/general.ui:11
-#, fuzzy
 msgid ""
-"Some applications created with LibAdwaita or LibHandy already have rounded "
-"corners. You can enable those settings to avoid rounding their corners an "
-"extra time."
-msgstr ""
-"Sommige LibAdwaita- en LibHandy-apps hebben al afgeronde hoeken. Hierdoor is "
-"het niet nodig voor deze uitbreiding om te proberen ze ervan te voorzien."
-
-#: src/preferences/pages/general.ui:14
-#, fuzzy
-msgid "Skip LibAdwaita applications"
-msgstr "LibAdwaita-apps negeren"
-
-#: src/preferences/pages/general.ui:19
-#, fuzzy
-msgid "Skip LibHandy applications"
-msgstr "LibHandy-apps negeren"
-
-#: src/preferences/pages/general.ui:26
-#, fuzzy
-msgid "Global settings"
-msgstr "Globale voorkeuren"
-
-#: src/preferences/pages/general.ui:27
-#, fuzzy
-msgid "These settings will have an effect on all windows"
-msgstr "Deze voorkeuren zijn van toepassing op alle vensters"
-
-#: src/preferences/pages/general.ui:30
-#, fuzzy
-msgid "Border width"
-msgstr "Randbreedte"
-
-#: src/preferences/pages/general.ui:57 src/preferences/pages/general.ui:65
-#: src/preferences/widgets/custom_settings_row.ts:20
-#, fuzzy
-msgid "Border color"
-msgstr "Randkleur"
-
-#: src/preferences/pages/general.ui:74 src/preferences/pages/general.ui:82
-#: src/preferences/widgets/custom_settings_row.ts:28
-#, fuzzy
-msgid "Unfocused border color"
-msgstr "Randkleur"
-
-#: src/preferences/pages/general.ui:91
-#: src/preferences/widgets/custom_settings_row.ts:36
-#, fuzzy
-msgid "Corner radius"
-msgstr "Randstraal"
-
-#: src/preferences/pages/general.ui:118
-#: src/preferences/widgets/custom_settings_row.ts:46
-#, fuzzy
-msgid "Corner smoothing"
-msgstr "Hoeken gladstrijken"
-
-#: src/preferences/pages/general.ui:144
-#, fuzzy
-msgid "Window shadow"
-msgstr "Vensterschaduw"
-
-#: src/preferences/pages/general.ui:145
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Pas de schaduw van afgeronde vensters aan"
-
-#: src/preferences/pages/general.ui:157
-#, fuzzy
-msgid "Keep shadows for maximized and fullscreen windows"
-msgstr "Afgeronde hoeken van schermvullende vensters behouden"
-
-#: src/preferences/pages/general.ui:162
-#, fuzzy
-msgid "Keep rounded corners for maximized windows"
-msgstr "Afgeronde hoeken van gemaximaliseerde vensters behouden"
-
-#: src/preferences/pages/general.ui:167
-#, fuzzy
-msgid "Keep rounded corners for fullscreen windows"
-msgstr "Afgeronde hoeken van schermvullende vensters behouden"
-
-#: src/preferences/pages/general.ui:177
-#, fuzzy
-msgid "Window margin"
-msgstr "Vensterschaduw"
-
-#: src/preferences/pages/general.ui:178
-msgid ""
-"Reserve space around the desktop for maximized and tiled windows without "
-"cropping their contents. Fullscreen windows are unaffected. No extra space "
-"is added between tiled windows. Applies to all applications."
+"Windows get the corners, border, outline, shadow and margin of libadwaita "
+"windows, in each state: normal, maximized, tiled and fullscreen. Change them "
+"in ~/.config/gtk-4.0/gtk.css and every window follows, live. libadwaita apps "
+"are left alone, since they already draw them."
 msgstr ""
 
-#: src/preferences/pages/general.ui:181
-msgid "Enable outer margin"
-msgstr ""
-
-#: src/preferences/pages/general.ui:186
-msgid "Margin size"
-msgstr ""
-
-#: src/preferences/pages/general.ui:187
-msgid "Logical pixels on each outer edge"
-msgstr ""
-
-#: src/preferences/pages/general.ui:203
+#: src/preferences/pages/general.ui:16
 msgid "Tweaks"
 msgstr "Trucs"
 
-#: src/preferences/pages/general.ui:206
+#: src/preferences/pages/general.ui:19
 msgid "Hide effects while moving or resizing"
 msgstr ""
 
-#: src/preferences/pages/general.ui:207
+#: src/preferences/pages/general.ui:20
 msgid ""
 "Hide borders, rounded corners and shadows during the operation, then fade "
 "them back together when it ends"
 msgstr ""
 
-#: src/preferences/pages/general.ui:212
-#, fuzzy
-msgid "Add rounded corners to Kitty Terminal on Wayland"
-msgstr "Kitty Terminal voorzien van afgeronde hoeken op Wayland"
-
-#: src/preferences/pages/general.ui:213
-msgid "Adjust paddings for Kitty Terminal to correctly round its corners"
-msgstr ""
-
-#: src/preferences/pages/general.ui:220
+#: src/preferences/pages/general.ui:27
 msgid "Debug"
 msgstr "Foutopsporing"
 
-#: src/preferences/pages/general.ui:223
+#: src/preferences/pages/general.ui:30
 #, fuzzy
 msgid "Enable debug logs"
 msgstr "Logboek bijhouden"
 
-#: src/preferences/pages/general.ui:224
+#: src/preferences/pages/general.ui:31
 #, fuzzy
 msgid ""
 "Run journalctl -o cat -f /usr/bin/gnome-shell in your terminal to see the log"
 msgstr ""
 "Voer <i>journalctl -o cat -f /usr/bin/gnome-shell</i> uit in een "
 "terminalvenster om het logboek te bekijken"
-
-#: src/preferences/pages/general.ui:233
-#, fuzzy
-msgid "Reset preferences"
-msgstr "Voorkeuren herstellen"
-
-#: src/preferences/pages/reset.ui:6
-msgid "Reset settings"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:16
-#, fuzzy
-msgid "Settings to reset"
-msgstr "Selecteer te herstellen items"
-
-#: src/preferences/pages/reset.ui:22
-#, fuzzy
-msgid "Select all"
-msgstr "Alles selecteren"
-
-#: src/preferences/pages/reset.ui:39
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:55
-msgid "Reset these settings?"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:60
-msgid "_Cancel"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:61
-msgid "_Reset"
-msgstr ""
-
-#: src/preferences/widgets/paddings-row.ui:12
-msgid "Paddings"
-msgstr "Opvullingen"
-
-#: src/preferences/widgets/paddings-row.ui:25
-msgid "Top"
-msgstr "Bovenaan"
-
-#: src/preferences/widgets/paddings-row.ui:40
-msgid "Bottom"
-msgstr "Onderaan"
-
-#: src/preferences/widgets/paddings-row.ui:55
-msgid "Left"
-msgstr "Links"
-
-#: src/preferences/widgets/paddings-row.ui:70
-msgid "Right"
-msgstr "Rechts"
 
 #: src/preferences/pages/blacklist.ts:62
 #, fuzzy
@@ -341,32 +116,173 @@ msgstr "Klap deze rij uit om een venster te kiezen."
 msgid "Can't pick window from this position"
 msgstr "Er kan vanaf deze positie geen venster worden gekozen"
 
-#: src/preferences/widgets/custom_settings_row.ts:16
-#, fuzzy
-msgid "Enabled"
-msgstr "Inschakelen"
+#~ msgid "Custom"
+#~ msgstr "Aangepast"
 
-#: src/preferences/widgets/custom_settings_row.ts:56
 #, fuzzy
-msgid "Keep rounded corners when maximized"
-msgstr "Afgeronde hoeken van gemaximaliseerde vensters behouden"
+#~ msgid "Set custom effect setting for each window class"
+#~ msgstr "Gebruik aangepaste voorkeuren in dit venster"
 
-#: src/preferences/widgets/custom_settings_row.ts:58
 #, fuzzy
-msgid "Always clip rounded corners even if window is maximized or tiled"
-msgstr ""
-"Behoud afgeronde hoeken als het venster in kwestie gemaximaliseerd of "
-"getegeld is."
+#~ msgid "Focused window"
+#~ msgstr "Vensterfocus"
 
-#: src/preferences/widgets/custom_settings_row.ts:62
 #, fuzzy
-msgid "Keep rounded corners when in fullscreen"
-msgstr "Afgeronde hoeken van schermvullende vensters behouden"
+#~ msgid "Unfocused window"
+#~ msgstr "Ongefocust venster"
 
-#: src/preferences/widgets/custom_settings_row.ts:63
 #, fuzzy
-msgid "Always clip rounded corners even for fullscreen window"
-msgstr "Behoud afgeronde hoeken als het venster in kwestie schermvullend is."
+#~ msgid "Focused shadow preferences"
+#~ msgstr "Voorkeuren herstellen"
+
+#, fuzzy
+#~ msgid "Horizontal offset"
+#~ msgstr "Horizontale verschuiving"
+
+#, fuzzy
+#~ msgid "Vertical offset"
+#~ msgstr "Verticale verschuiving"
+
+#, fuzzy
+#~ msgid "Blur radius"
+#~ msgstr "Randstraal"
+
+#, fuzzy
+#~ msgid "Spread radius"
+#~ msgstr "Verspreiding"
+
+#~ msgid "Opacity"
+#~ msgstr "Doorzichtigheid"
+
+#, fuzzy
+#~ msgid "Unfocused shadow preferences"
+#~ msgstr "Voorkeuren herstellen"
+
+#~ msgid "Applications"
+#~ msgstr "Apps"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some applications created with LibAdwaita or LibHandy already have "
+#~ "rounded corners. You can enable those settings to avoid rounding their "
+#~ "corners an extra time."
+#~ msgstr ""
+#~ "Sommige LibAdwaita- en LibHandy-apps hebben al afgeronde hoeken. Hierdoor "
+#~ "is het niet nodig voor deze uitbreiding om te proberen ze ervan te "
+#~ "voorzien."
+
+#, fuzzy
+#~ msgid "Skip LibAdwaita applications"
+#~ msgstr "LibAdwaita-apps negeren"
+
+#, fuzzy
+#~ msgid "Skip LibHandy applications"
+#~ msgstr "LibHandy-apps negeren"
+
+#, fuzzy
+#~ msgid "Global settings"
+#~ msgstr "Globale voorkeuren"
+
+#, fuzzy
+#~ msgid "These settings will have an effect on all windows"
+#~ msgstr "Deze voorkeuren zijn van toepassing op alle vensters"
+
+#, fuzzy
+#~ msgid "Border width"
+#~ msgstr "Randbreedte"
+
+#, fuzzy
+#~ msgid "Border color"
+#~ msgstr "Randkleur"
+
+#, fuzzy
+#~ msgid "Unfocused border color"
+#~ msgstr "Randkleur"
+
+#, fuzzy
+#~ msgid "Corner radius"
+#~ msgstr "Randstraal"
+
+#, fuzzy
+#~ msgid "Corner smoothing"
+#~ msgstr "Hoeken gladstrijken"
+
+#, fuzzy
+#~ msgid "Window shadow"
+#~ msgstr "Vensterschaduw"
+
+#~ msgid "Customize the shadow of the rounded corner window"
+#~ msgstr "Pas de schaduw van afgeronde vensters aan"
+
+#, fuzzy
+#~ msgid "Keep shadows for maximized and fullscreen windows"
+#~ msgstr "Afgeronde hoeken van schermvullende vensters behouden"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for maximized windows"
+#~ msgstr "Afgeronde hoeken van gemaximaliseerde vensters behouden"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for fullscreen windows"
+#~ msgstr "Afgeronde hoeken van schermvullende vensters behouden"
+
+#, fuzzy
+#~ msgid "Window margin"
+#~ msgstr "Vensterschaduw"
+
+#, fuzzy
+#~ msgid "Add rounded corners to Kitty Terminal on Wayland"
+#~ msgstr "Kitty Terminal voorzien van afgeronde hoeken op Wayland"
+
+#, fuzzy
+#~ msgid "Reset preferences"
+#~ msgstr "Voorkeuren herstellen"
+
+#, fuzzy
+#~ msgid "Settings to reset"
+#~ msgstr "Selecteer te herstellen items"
+
+#, fuzzy
+#~ msgid "Select all"
+#~ msgstr "Alles selecteren"
+
+#~ msgid "Paddings"
+#~ msgstr "Opvullingen"
+
+#~ msgid "Top"
+#~ msgstr "Bovenaan"
+
+#~ msgid "Bottom"
+#~ msgstr "Onderaan"
+
+#~ msgid "Left"
+#~ msgstr "Links"
+
+#~ msgid "Right"
+#~ msgstr "Rechts"
+
+#, fuzzy
+#~ msgid "Enabled"
+#~ msgstr "Inschakelen"
+
+#, fuzzy
+#~ msgid "Keep rounded corners when maximized"
+#~ msgstr "Afgeronde hoeken van gemaximaliseerde vensters behouden"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even if window is maximized or tiled"
+#~ msgstr ""
+#~ "Behoud afgeronde hoeken als het venster in kwestie gemaximaliseerd of "
+#~ "getegeld is."
+
+#, fuzzy
+#~ msgid "Keep rounded corners when in fullscreen"
+#~ msgstr "Afgeronde hoeken van schermvullende vensters behouden"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even for fullscreen window"
+#~ msgstr ""
+#~ "Behoud afgeronde hoeken als het venster in kwestie schermvullend is."
 
 #~ msgid "Rounded Corners Settings..."
 #~ msgstr "Afgeronde hoeken-voorkeuren…"

@@ -1,20 +1,8 @@
 # `manager`
 
-The rounded corners effect has to perform some actions when differen events
-happen. For example, when a new window is opened, the effect has to detect
-it and add rounded corners to it.
+## `window_tracker.ts`
 
-This directory contains the code that handles these events.
-
-## `event_manager.ts` 
-
-Manages connections between gnome shell events and the rounded corners
-effect. It attaches the necessary signals to matching handlers on each effect.
-
-## `event_handlers.ts`
-
-Contains the implementation of handlers for all of the events. 
-
-## `utils.ts`
-
-Provides various utility functions used withing signal handling code.
+Decides which windows get rounded corners and keeps their effects in sync with
+the window's state (normal, maximized, tiled, fullscreen), its focus, the
+blacklist and the GTK style. It also hides the effects while a window is
+dragged, when that preference is on.

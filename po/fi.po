@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 13:19-0500\n"
+"POT-Creation-Date: 2026-10-31 13:17-0500\n"
 "PO-Revision-Date: 2022-11-12 07:50+0000\n"
 "Last-Translator: Ilari Suhonen <ilari.suhonen@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/rounded-window-"
@@ -40,282 +40,57 @@ msgid ""
 "windows."
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:25
 #, fuzzy
 msgid "Add window"
 msgstr "Lisää ikkuna"
-
-#: src/preferences/pages/custom.ui:6 src/preferences/pages/custom.ui:10
-msgid "Custom"
-msgstr "Mukautettu"
-
-#: src/preferences/pages/custom.ui:11
-#, fuzzy
-msgid "Set custom effect setting for each window class"
-msgstr "Käytä kustomoituja asetuksia tälle ikkunalle"
-
-#: src/preferences/pages/edit-shadow.ui:6
-msgid "Edit shadows"
-msgstr ""
-
-#: src/preferences/pages/edit-shadow.ui:28
-#, fuzzy
-msgid "Focused window"
-msgstr "Keskitetty ikkuna"
-
-#: src/preferences/pages/edit-shadow.ui:43
-#, fuzzy
-msgid "Unfocused window"
-msgstr "Keskittämätön ikkuna"
-
-#: src/preferences/pages/edit-shadow.ui:66
-#, fuzzy
-msgid "Focused shadow preferences"
-msgstr "Nollaa asetukset"
-
-#: src/preferences/pages/edit-shadow.ui:69
-#: src/preferences/pages/edit-shadow.ui:209
-#, fuzzy
-msgid "Horizontal offset"
-msgstr "Vaakasiirtymä"
-
-#: src/preferences/pages/edit-shadow.ui:96
-#: src/preferences/pages/edit-shadow.ui:236
-#, fuzzy
-msgid "Vertical offset"
-msgstr "Pystysiirtymä"
-
-#: src/preferences/pages/edit-shadow.ui:123
-#: src/preferences/pages/edit-shadow.ui:263
-#, fuzzy
-msgid "Blur radius"
-msgstr "Reunan säde"
-
-#: src/preferences/pages/edit-shadow.ui:150
-#: src/preferences/pages/edit-shadow.ui:290
-#, fuzzy
-msgid "Spread radius"
-msgstr "Varjon koko"
-
-#: src/preferences/pages/edit-shadow.ui:177
-#: src/preferences/pages/edit-shadow.ui:317
-msgid "Opacity"
-msgstr "Peittävyys"
-
-#: src/preferences/pages/edit-shadow.ui:206
-#, fuzzy
-msgid "Unfocused shadow preferences"
-msgstr "Nollaa asetukset"
 
 #: src/preferences/pages/general.ui:6
 msgid "General"
 msgstr "Yleinen"
 
 #: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Sovellukset"
+msgid "Appearance"
+msgstr ""
 
 #: src/preferences/pages/general.ui:11
-#, fuzzy
 msgid ""
-"Some applications created with LibAdwaita or LibHandy already have rounded "
-"corners. You can enable those settings to avoid rounding their corners an "
-"extra time."
-msgstr ""
-"Jotkut LibAdwaitalla tai LibHandyllä kirjoitetut ohjelmat pyöristävät "
-"kulmansa itse, joten ne voidaan ohittaa"
-
-#: src/preferences/pages/general.ui:14
-#, fuzzy
-msgid "Skip LibAdwaita applications"
-msgstr "Älä pyöristä LibAdwaita-ikkunoiden kulmia"
-
-#: src/preferences/pages/general.ui:19
-#, fuzzy
-msgid "Skip LibHandy applications"
-msgstr "Älä pyöristä LibHandy-ikkunoiden kulmia"
-
-#: src/preferences/pages/general.ui:26
-#, fuzzy
-msgid "Global settings"
-msgstr "Globaalit asetukset"
-
-#: src/preferences/pages/general.ui:27
-#, fuzzy
-msgid "These settings will have an effect on all windows"
-msgstr "Tämä asetus pyrkii vaikuttamaan kaikkiin ikkunoihin"
-
-#: src/preferences/pages/general.ui:30
-#, fuzzy
-msgid "Border width"
-msgstr "Reunan leveys"
-
-#: src/preferences/pages/general.ui:57 src/preferences/pages/general.ui:65
-#: src/preferences/widgets/custom_settings_row.ts:20
-#, fuzzy
-msgid "Border color"
-msgstr "Reunan väri"
-
-#: src/preferences/pages/general.ui:74 src/preferences/pages/general.ui:82
-#: src/preferences/widgets/custom_settings_row.ts:28
-#, fuzzy
-msgid "Unfocused border color"
-msgstr "Reunan väri"
-
-#: src/preferences/pages/general.ui:91
-#: src/preferences/widgets/custom_settings_row.ts:36
-#, fuzzy
-msgid "Corner radius"
-msgstr "Reunan säde"
-
-#: src/preferences/pages/general.ui:118
-#: src/preferences/widgets/custom_settings_row.ts:46
-#, fuzzy
-msgid "Corner smoothing"
-msgstr "Kulman pehmitys"
-
-#: src/preferences/pages/general.ui:144
-#, fuzzy
-msgid "Window shadow"
-msgstr "Ikkunan varjo"
-
-#: src/preferences/pages/general.ui:145
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Mukauta pyöristetyn kulman varjoa"
-
-#: src/preferences/pages/general.ui:157
-#, fuzzy
-msgid "Keep shadows for maximized and fullscreen windows"
-msgstr "Pidä pyöristetyt kulmat kokonäytön tilassa"
-
-#: src/preferences/pages/general.ui:162
-#, fuzzy
-msgid "Keep rounded corners for maximized windows"
-msgstr "Pidä pyöristetyt kulmat maksimoidussa tilassa"
-
-#: src/preferences/pages/general.ui:167
-#, fuzzy
-msgid "Keep rounded corners for fullscreen windows"
-msgstr "Pidä pyöristetyt kulmat kokonäytön tilassa"
-
-#: src/preferences/pages/general.ui:177
-#, fuzzy
-msgid "Window margin"
-msgstr "Ikkunan varjo"
-
-#: src/preferences/pages/general.ui:178
-msgid ""
-"Reserve space around the desktop for maximized and tiled windows without "
-"cropping their contents. Fullscreen windows are unaffected. No extra space "
-"is added between tiled windows. Applies to all applications."
+"Windows get the corners, border, outline, shadow and margin of libadwaita "
+"windows, in each state: normal, maximized, tiled and fullscreen. Change them "
+"in ~/.config/gtk-4.0/gtk.css and every window follows, live. libadwaita apps "
+"are left alone, since they already draw them."
 msgstr ""
 
-#: src/preferences/pages/general.ui:181
-msgid "Enable outer margin"
-msgstr ""
-
-#: src/preferences/pages/general.ui:186
-msgid "Margin size"
-msgstr ""
-
-#: src/preferences/pages/general.ui:187
-msgid "Logical pixels on each outer edge"
-msgstr ""
-
-#: src/preferences/pages/general.ui:203
+#: src/preferences/pages/general.ui:16
 msgid "Tweaks"
 msgstr "Hienosäädöt"
 
-#: src/preferences/pages/general.ui:206
+#: src/preferences/pages/general.ui:19
 msgid "Hide effects while moving or resizing"
 msgstr ""
 
-#: src/preferences/pages/general.ui:207
+#: src/preferences/pages/general.ui:20
 msgid ""
 "Hide borders, rounded corners and shadows during the operation, then fade "
 "them back together when it ends"
 msgstr ""
 
-#: src/preferences/pages/general.ui:212
-#, fuzzy
-msgid "Add rounded corners to Kitty Terminal on Wayland"
-msgstr "Koita pyöristää Kitty-pääteohjelman kulmat Waylandissa"
-
-#: src/preferences/pages/general.ui:213
-msgid "Adjust paddings for Kitty Terminal to correctly round its corners"
-msgstr ""
-
-#: src/preferences/pages/general.ui:220
+#: src/preferences/pages/general.ui:27
 msgid "Debug"
 msgstr "Vianetsintä"
 
-#: src/preferences/pages/general.ui:223
+#: src/preferences/pages/general.ui:30
 #, fuzzy
 msgid "Enable debug logs"
 msgstr "Kirjoita lokiin"
 
-#: src/preferences/pages/general.ui:224
+#: src/preferences/pages/general.ui:31
 #, fuzzy
 msgid ""
 "Run journalctl -o cat -f /usr/bin/gnome-shell in your terminal to see the log"
 msgstr ""
 "Suorita <i>journalctl -o cat -f /usr/bin/gnome-shell</i> komentopäätteessä "
 "nähdäksesi lokin"
-
-#: src/preferences/pages/general.ui:233
-#, fuzzy
-msgid "Reset preferences"
-msgstr "Nollaa asetukset"
-
-#: src/preferences/pages/reset.ui:6
-msgid "Reset settings"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:16
-#, fuzzy
-msgid "Settings to reset"
-msgstr "Valitse nollattavat asetukset"
-
-#: src/preferences/pages/reset.ui:22
-#, fuzzy
-msgid "Select all"
-msgstr "Valitse kaikki"
-
-#: src/preferences/pages/reset.ui:39
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:55
-msgid "Reset these settings?"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:60
-msgid "_Cancel"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:61
-msgid "_Reset"
-msgstr ""
-
-#: src/preferences/widgets/paddings-row.ui:12
-msgid "Paddings"
-msgstr "Ylijäämäasetukset"
-
-#: src/preferences/widgets/paddings-row.ui:25
-msgid "Top"
-msgstr "Yläosa"
-
-#: src/preferences/widgets/paddings-row.ui:40
-msgid "Bottom"
-msgstr "Alaosa"
-
-#: src/preferences/widgets/paddings-row.ui:55
-msgid "Left"
-msgstr "Vasen"
-
-#: src/preferences/widgets/paddings-row.ui:70
-msgid "Right"
-msgstr "Oikea"
 
 #: src/preferences/pages/blacklist.ts:62
 #, fuzzy
@@ -341,30 +116,170 @@ msgstr "Laajenna rivi valitaksesi ikkunan."
 msgid "Can't pick window from this position"
 msgstr "Ikkunaa ei voi valita tästä sijainnista"
 
-#: src/preferences/widgets/custom_settings_row.ts:16
-#, fuzzy
-msgid "Enabled"
-msgstr "Päälle"
+#~ msgid "Custom"
+#~ msgstr "Mukautettu"
 
-#: src/preferences/widgets/custom_settings_row.ts:56
 #, fuzzy
-msgid "Keep rounded corners when maximized"
-msgstr "Pidä pyöristetyt kulmat maksimoidussa tilassa"
+#~ msgid "Set custom effect setting for each window class"
+#~ msgstr "Käytä kustomoituja asetuksia tälle ikkunalle"
 
-#: src/preferences/widgets/custom_settings_row.ts:58
 #, fuzzy
-msgid "Always clip rounded corners even if window is maximized or tiled"
-msgstr "Älä poista pyöristettyjä kulmia aseteltujen tai kokonäytön ikkunoista."
+#~ msgid "Focused window"
+#~ msgstr "Keskitetty ikkuna"
 
-#: src/preferences/widgets/custom_settings_row.ts:62
 #, fuzzy
-msgid "Keep rounded corners when in fullscreen"
-msgstr "Pidä pyöristetyt kulmat kokonäytön tilassa"
+#~ msgid "Unfocused window"
+#~ msgstr "Keskittämätön ikkuna"
 
-#: src/preferences/widgets/custom_settings_row.ts:63
 #, fuzzy
-msgid "Always clip rounded corners even for fullscreen window"
-msgstr "Älä poista pyöristettyjä kulmia kokonäytön ikkunoista."
+#~ msgid "Focused shadow preferences"
+#~ msgstr "Nollaa asetukset"
+
+#, fuzzy
+#~ msgid "Horizontal offset"
+#~ msgstr "Vaakasiirtymä"
+
+#, fuzzy
+#~ msgid "Vertical offset"
+#~ msgstr "Pystysiirtymä"
+
+#, fuzzy
+#~ msgid "Blur radius"
+#~ msgstr "Reunan säde"
+
+#, fuzzy
+#~ msgid "Spread radius"
+#~ msgstr "Varjon koko"
+
+#~ msgid "Opacity"
+#~ msgstr "Peittävyys"
+
+#, fuzzy
+#~ msgid "Unfocused shadow preferences"
+#~ msgstr "Nollaa asetukset"
+
+#~ msgid "Applications"
+#~ msgstr "Sovellukset"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some applications created with LibAdwaita or LibHandy already have "
+#~ "rounded corners. You can enable those settings to avoid rounding their "
+#~ "corners an extra time."
+#~ msgstr ""
+#~ "Jotkut LibAdwaitalla tai LibHandyllä kirjoitetut ohjelmat pyöristävät "
+#~ "kulmansa itse, joten ne voidaan ohittaa"
+
+#, fuzzy
+#~ msgid "Skip LibAdwaita applications"
+#~ msgstr "Älä pyöristä LibAdwaita-ikkunoiden kulmia"
+
+#, fuzzy
+#~ msgid "Skip LibHandy applications"
+#~ msgstr "Älä pyöristä LibHandy-ikkunoiden kulmia"
+
+#, fuzzy
+#~ msgid "Global settings"
+#~ msgstr "Globaalit asetukset"
+
+#, fuzzy
+#~ msgid "These settings will have an effect on all windows"
+#~ msgstr "Tämä asetus pyrkii vaikuttamaan kaikkiin ikkunoihin"
+
+#, fuzzy
+#~ msgid "Border width"
+#~ msgstr "Reunan leveys"
+
+#, fuzzy
+#~ msgid "Border color"
+#~ msgstr "Reunan väri"
+
+#, fuzzy
+#~ msgid "Unfocused border color"
+#~ msgstr "Reunan väri"
+
+#, fuzzy
+#~ msgid "Corner radius"
+#~ msgstr "Reunan säde"
+
+#, fuzzy
+#~ msgid "Corner smoothing"
+#~ msgstr "Kulman pehmitys"
+
+#, fuzzy
+#~ msgid "Window shadow"
+#~ msgstr "Ikkunan varjo"
+
+#~ msgid "Customize the shadow of the rounded corner window"
+#~ msgstr "Mukauta pyöristetyn kulman varjoa"
+
+#, fuzzy
+#~ msgid "Keep shadows for maximized and fullscreen windows"
+#~ msgstr "Pidä pyöristetyt kulmat kokonäytön tilassa"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for maximized windows"
+#~ msgstr "Pidä pyöristetyt kulmat maksimoidussa tilassa"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for fullscreen windows"
+#~ msgstr "Pidä pyöristetyt kulmat kokonäytön tilassa"
+
+#, fuzzy
+#~ msgid "Window margin"
+#~ msgstr "Ikkunan varjo"
+
+#, fuzzy
+#~ msgid "Add rounded corners to Kitty Terminal on Wayland"
+#~ msgstr "Koita pyöristää Kitty-pääteohjelman kulmat Waylandissa"
+
+#, fuzzy
+#~ msgid "Reset preferences"
+#~ msgstr "Nollaa asetukset"
+
+#, fuzzy
+#~ msgid "Settings to reset"
+#~ msgstr "Valitse nollattavat asetukset"
+
+#, fuzzy
+#~ msgid "Select all"
+#~ msgstr "Valitse kaikki"
+
+#~ msgid "Paddings"
+#~ msgstr "Ylijäämäasetukset"
+
+#~ msgid "Top"
+#~ msgstr "Yläosa"
+
+#~ msgid "Bottom"
+#~ msgstr "Alaosa"
+
+#~ msgid "Left"
+#~ msgstr "Vasen"
+
+#~ msgid "Right"
+#~ msgstr "Oikea"
+
+#, fuzzy
+#~ msgid "Enabled"
+#~ msgstr "Päälle"
+
+#, fuzzy
+#~ msgid "Keep rounded corners when maximized"
+#~ msgstr "Pidä pyöristetyt kulmat maksimoidussa tilassa"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even if window is maximized or tiled"
+#~ msgstr ""
+#~ "Älä poista pyöristettyjä kulmia aseteltujen tai kokonäytön ikkunoista."
+
+#, fuzzy
+#~ msgid "Keep rounded corners when in fullscreen"
+#~ msgstr "Pidä pyöristetyt kulmat kokonäytön tilassa"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even for fullscreen window"
+#~ msgstr "Älä poista pyöristettyjä kulmia kokonäytön ikkunoista."
 
 #~ msgid "Rounded Corners Settings..."
 #~ msgstr "Kulmienpyöristyksen asetukset..."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 13:19-0500\n"
+"POT-Creation-Date: 2026-10-31 13:17-0500\n"
 "PO-Revision-Date: 2023-03-27 22:37+0000\n"
 "Last-Translator: Dan <denqwerta@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/rounded-window-"
@@ -42,283 +42,57 @@ msgid ""
 "windows."
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:25
 #, fuzzy
 msgid "Add window"
 msgstr "Додати вікно"
-
-#: src/preferences/pages/custom.ui:6 src/preferences/pages/custom.ui:10
-msgid "Custom"
-msgstr "Власний"
-
-#: src/preferences/pages/custom.ui:11
-#, fuzzy
-msgid "Set custom effect setting for each window class"
-msgstr "Увімкнути власні налаштування для цього вікна"
-
-#: src/preferences/pages/edit-shadow.ui:6
-msgid "Edit shadows"
-msgstr ""
-
-#: src/preferences/pages/edit-shadow.ui:28
-#, fuzzy
-msgid "Focused window"
-msgstr "Сфокусувати вікно"
-
-#: src/preferences/pages/edit-shadow.ui:43
-#, fuzzy
-msgid "Unfocused window"
-msgstr "Розфокусувати вікно"
-
-#: src/preferences/pages/edit-shadow.ui:66
-#, fuzzy
-msgid "Focused shadow preferences"
-msgstr "Скинути налаштування"
-
-#: src/preferences/pages/edit-shadow.ui:69
-#: src/preferences/pages/edit-shadow.ui:209
-#, fuzzy
-msgid "Horizontal offset"
-msgstr "Горизонтальний зсув"
-
-#: src/preferences/pages/edit-shadow.ui:96
-#: src/preferences/pages/edit-shadow.ui:236
-#, fuzzy
-msgid "Vertical offset"
-msgstr "Вертикальний зсув"
-
-#: src/preferences/pages/edit-shadow.ui:123
-#: src/preferences/pages/edit-shadow.ui:263
-#, fuzzy
-msgid "Blur radius"
-msgstr "Радіус рамки"
-
-#: src/preferences/pages/edit-shadow.ui:150
-#: src/preferences/pages/edit-shadow.ui:290
-#, fuzzy
-msgid "Spread radius"
-msgstr "Радіус розповсюдження"
-
-#: src/preferences/pages/edit-shadow.ui:177
-#: src/preferences/pages/edit-shadow.ui:317
-msgid "Opacity"
-msgstr "Непрозорість"
-
-#: src/preferences/pages/edit-shadow.ui:206
-#, fuzzy
-msgid "Unfocused shadow preferences"
-msgstr "Скинути налаштування"
 
 #: src/preferences/pages/general.ui:6
 msgid "General"
 msgstr "Загальне"
 
 #: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Застосунки"
+msgid "Appearance"
+msgstr ""
 
 #: src/preferences/pages/general.ui:11
-#, fuzzy
 msgid ""
-"Some applications created with LibAdwaita or LibHandy already have rounded "
-"corners. You can enable those settings to avoid rounding their corners an "
-"extra time."
-msgstr ""
-"Деякі застосунки, написані за допомогою LibAdwaita або LibHandy, вже мають "
-"власні заокруглені кути, тому ми можемо пропустити їх за допомогою цих "
-"налаштувань"
-
-#: src/preferences/pages/general.ui:14
-#, fuzzy
-msgid "Skip LibAdwaita applications"
-msgstr "Пропустити застосунки LibAdwaita"
-
-#: src/preferences/pages/general.ui:19
-#, fuzzy
-msgid "Skip LibHandy applications"
-msgstr "Пропустити застосунки LibHandy"
-
-#: src/preferences/pages/general.ui:26
-#, fuzzy
-msgid "Global settings"
-msgstr "Глобальні налаштування"
-
-#: src/preferences/pages/general.ui:27
-#, fuzzy
-msgid "These settings will have an effect on all windows"
-msgstr "Ці налаштування намагатимуться вплинути на всі вікна"
-
-#: src/preferences/pages/general.ui:30
-#, fuzzy
-msgid "Border width"
-msgstr "Ширина рамки"
-
-#: src/preferences/pages/general.ui:57 src/preferences/pages/general.ui:65
-#: src/preferences/widgets/custom_settings_row.ts:20
-#, fuzzy
-msgid "Border color"
-msgstr "Колір рамки"
-
-#: src/preferences/pages/general.ui:74 src/preferences/pages/general.ui:82
-#: src/preferences/widgets/custom_settings_row.ts:28
-#, fuzzy
-msgid "Unfocused border color"
-msgstr "Колір рамки"
-
-#: src/preferences/pages/general.ui:91
-#: src/preferences/widgets/custom_settings_row.ts:36
-#, fuzzy
-msgid "Corner radius"
-msgstr "Радіус рамки"
-
-#: src/preferences/pages/general.ui:118
-#: src/preferences/widgets/custom_settings_row.ts:46
-#, fuzzy
-msgid "Corner smoothing"
-msgstr "Згладжування кутів"
-
-#: src/preferences/pages/general.ui:144
-#, fuzzy
-msgid "Window shadow"
-msgstr "Тінь вікна"
-
-#: src/preferences/pages/general.ui:145
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Налаштувати тінь заокругленого кутового вікна"
-
-#: src/preferences/pages/general.ui:157
-#, fuzzy
-msgid "Keep shadows for maximized and fullscreen windows"
-msgstr "Зберігати заокруглені кути в повноекранному режимі"
-
-#: src/preferences/pages/general.ui:162
-#, fuzzy
-msgid "Keep rounded corners for maximized windows"
-msgstr "Зберігати заокруглені кути при збільшенні"
-
-#: src/preferences/pages/general.ui:167
-#, fuzzy
-msgid "Keep rounded corners for fullscreen windows"
-msgstr "Зберігати заокруглені кути в повноекранному режимі"
-
-#: src/preferences/pages/general.ui:177
-#, fuzzy
-msgid "Window margin"
-msgstr "Тінь вікна"
-
-#: src/preferences/pages/general.ui:178
-msgid ""
-"Reserve space around the desktop for maximized and tiled windows without "
-"cropping their contents. Fullscreen windows are unaffected. No extra space "
-"is added between tiled windows. Applies to all applications."
+"Windows get the corners, border, outline, shadow and margin of libadwaita "
+"windows, in each state: normal, maximized, tiled and fullscreen. Change them "
+"in ~/.config/gtk-4.0/gtk.css and every window follows, live. libadwaita apps "
+"are left alone, since they already draw them."
 msgstr ""
 
-#: src/preferences/pages/general.ui:181
-msgid "Enable outer margin"
-msgstr ""
-
-#: src/preferences/pages/general.ui:186
-msgid "Margin size"
-msgstr ""
-
-#: src/preferences/pages/general.ui:187
-msgid "Logical pixels on each outer edge"
-msgstr ""
-
-#: src/preferences/pages/general.ui:203
+#: src/preferences/pages/general.ui:16
 msgid "Tweaks"
 msgstr "Твіки"
 
-#: src/preferences/pages/general.ui:206
+#: src/preferences/pages/general.ui:19
 msgid "Hide effects while moving or resizing"
 msgstr ""
 
-#: src/preferences/pages/general.ui:207
+#: src/preferences/pages/general.ui:20
 msgid ""
 "Hide borders, rounded corners and shadows during the operation, then fade "
 "them back together when it ends"
 msgstr ""
 
-#: src/preferences/pages/general.ui:212
-#, fuzzy
-msgid "Add rounded corners to Kitty Terminal on Wayland"
-msgstr "Спробувати додати заокруглені кути до терміналу Kitty у Wayland"
-
-#: src/preferences/pages/general.ui:213
-msgid "Adjust paddings for Kitty Terminal to correctly round its corners"
-msgstr ""
-
-#: src/preferences/pages/general.ui:220
+#: src/preferences/pages/general.ui:27
 msgid "Debug"
 msgstr "Налагодження"
 
-#: src/preferences/pages/general.ui:223
+#: src/preferences/pages/general.ui:30
 #, fuzzy
 msgid "Enable debug logs"
 msgstr "Увімкнути журнал"
 
-#: src/preferences/pages/general.ui:224
+#: src/preferences/pages/general.ui:31
 #, fuzzy
 msgid ""
 "Run journalctl -o cat -f /usr/bin/gnome-shell in your terminal to see the log"
 msgstr ""
 "Запустіть <i>journalctl -o cat -f /usr/bin/gnome-shell</i> у терміналі, щоб "
 "переглянути журнал"
-
-#: src/preferences/pages/general.ui:233
-#, fuzzy
-msgid "Reset preferences"
-msgstr "Скинути налаштування"
-
-#: src/preferences/pages/reset.ui:6
-msgid "Reset settings"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:16
-#, fuzzy
-msgid "Settings to reset"
-msgstr "Виберіть елементи для скидання"
-
-#: src/preferences/pages/reset.ui:22
-#, fuzzy
-msgid "Select all"
-msgstr "Вибрати все"
-
-#: src/preferences/pages/reset.ui:39
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:55
-msgid "Reset these settings?"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:60
-msgid "_Cancel"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:61
-msgid "_Reset"
-msgstr ""
-
-#: src/preferences/widgets/paddings-row.ui:12
-msgid "Paddings"
-msgstr "Відступи"
-
-#: src/preferences/widgets/paddings-row.ui:25
-msgid "Top"
-msgstr "Вверх"
-
-#: src/preferences/widgets/paddings-row.ui:40
-msgid "Bottom"
-msgstr "Низ"
-
-#: src/preferences/widgets/paddings-row.ui:55
-msgid "Left"
-msgstr "Ліворуч"
-
-#: src/preferences/widgets/paddings-row.ui:70
-msgid "Right"
-msgstr "Праворуч"
 
 #: src/preferences/pages/blacklist.ts:62
 #, fuzzy
@@ -344,33 +118,173 @@ msgstr "Розгорніть цей рядок, щоб вибрати вікно
 msgid "Can't pick window from this position"
 msgstr "Не можу вибрати вікно з цієї позиції"
 
-#: src/preferences/widgets/custom_settings_row.ts:16
-#, fuzzy
-msgid "Enabled"
-msgstr "Увімкнути"
+#~ msgid "Custom"
+#~ msgstr "Власний"
 
-#: src/preferences/widgets/custom_settings_row.ts:56
 #, fuzzy
-msgid "Keep rounded corners when maximized"
-msgstr "Зберігати заокруглені кути при збільшенні"
+#~ msgid "Set custom effect setting for each window class"
+#~ msgstr "Увімкнути власні налаштування для цього вікна"
 
-#: src/preferences/widgets/custom_settings_row.ts:58
 #, fuzzy
-msgid "Always clip rounded corners even if window is maximized or tiled"
-msgstr ""
-"Завжди зберігати заокруглені кути, коли вікно максимально збільшене або "
-"згорнуте."
+#~ msgid "Focused window"
+#~ msgstr "Сфокусувати вікно"
 
-#: src/preferences/widgets/custom_settings_row.ts:62
 #, fuzzy
-msgid "Keep rounded corners when in fullscreen"
-msgstr "Зберігати заокруглені кути в повноекранному режимі"
+#~ msgid "Unfocused window"
+#~ msgstr "Розфокусувати вікно"
 
-#: src/preferences/widgets/custom_settings_row.ts:63
 #, fuzzy
-msgid "Always clip rounded corners even for fullscreen window"
-msgstr ""
-"Завжди зберігати заокруглені кути, коли вікно розгорнуто на весь екран."
+#~ msgid "Focused shadow preferences"
+#~ msgstr "Скинути налаштування"
+
+#, fuzzy
+#~ msgid "Horizontal offset"
+#~ msgstr "Горизонтальний зсув"
+
+#, fuzzy
+#~ msgid "Vertical offset"
+#~ msgstr "Вертикальний зсув"
+
+#, fuzzy
+#~ msgid "Blur radius"
+#~ msgstr "Радіус рамки"
+
+#, fuzzy
+#~ msgid "Spread radius"
+#~ msgstr "Радіус розповсюдження"
+
+#~ msgid "Opacity"
+#~ msgstr "Непрозорість"
+
+#, fuzzy
+#~ msgid "Unfocused shadow preferences"
+#~ msgstr "Скинути налаштування"
+
+#~ msgid "Applications"
+#~ msgstr "Застосунки"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some applications created with LibAdwaita or LibHandy already have "
+#~ "rounded corners. You can enable those settings to avoid rounding their "
+#~ "corners an extra time."
+#~ msgstr ""
+#~ "Деякі застосунки, написані за допомогою LibAdwaita або LibHandy, вже "
+#~ "мають власні заокруглені кути, тому ми можемо пропустити їх за допомогою "
+#~ "цих налаштувань"
+
+#, fuzzy
+#~ msgid "Skip LibAdwaita applications"
+#~ msgstr "Пропустити застосунки LibAdwaita"
+
+#, fuzzy
+#~ msgid "Skip LibHandy applications"
+#~ msgstr "Пропустити застосунки LibHandy"
+
+#, fuzzy
+#~ msgid "Global settings"
+#~ msgstr "Глобальні налаштування"
+
+#, fuzzy
+#~ msgid "These settings will have an effect on all windows"
+#~ msgstr "Ці налаштування намагатимуться вплинути на всі вікна"
+
+#, fuzzy
+#~ msgid "Border width"
+#~ msgstr "Ширина рамки"
+
+#, fuzzy
+#~ msgid "Border color"
+#~ msgstr "Колір рамки"
+
+#, fuzzy
+#~ msgid "Unfocused border color"
+#~ msgstr "Колір рамки"
+
+#, fuzzy
+#~ msgid "Corner radius"
+#~ msgstr "Радіус рамки"
+
+#, fuzzy
+#~ msgid "Corner smoothing"
+#~ msgstr "Згладжування кутів"
+
+#, fuzzy
+#~ msgid "Window shadow"
+#~ msgstr "Тінь вікна"
+
+#~ msgid "Customize the shadow of the rounded corner window"
+#~ msgstr "Налаштувати тінь заокругленого кутового вікна"
+
+#, fuzzy
+#~ msgid "Keep shadows for maximized and fullscreen windows"
+#~ msgstr "Зберігати заокруглені кути в повноекранному режимі"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for maximized windows"
+#~ msgstr "Зберігати заокруглені кути при збільшенні"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for fullscreen windows"
+#~ msgstr "Зберігати заокруглені кути в повноекранному режимі"
+
+#, fuzzy
+#~ msgid "Window margin"
+#~ msgstr "Тінь вікна"
+
+#, fuzzy
+#~ msgid "Add rounded corners to Kitty Terminal on Wayland"
+#~ msgstr "Спробувати додати заокруглені кути до терміналу Kitty у Wayland"
+
+#, fuzzy
+#~ msgid "Reset preferences"
+#~ msgstr "Скинути налаштування"
+
+#, fuzzy
+#~ msgid "Settings to reset"
+#~ msgstr "Виберіть елементи для скидання"
+
+#, fuzzy
+#~ msgid "Select all"
+#~ msgstr "Вибрати все"
+
+#~ msgid "Paddings"
+#~ msgstr "Відступи"
+
+#~ msgid "Top"
+#~ msgstr "Вверх"
+
+#~ msgid "Bottom"
+#~ msgstr "Низ"
+
+#~ msgid "Left"
+#~ msgstr "Ліворуч"
+
+#~ msgid "Right"
+#~ msgstr "Праворуч"
+
+#, fuzzy
+#~ msgid "Enabled"
+#~ msgstr "Увімкнути"
+
+#, fuzzy
+#~ msgid "Keep rounded corners when maximized"
+#~ msgstr "Зберігати заокруглені кути при збільшенні"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even if window is maximized or tiled"
+#~ msgstr ""
+#~ "Завжди зберігати заокруглені кути, коли вікно максимально збільшене або "
+#~ "згорнуте."
+
+#, fuzzy
+#~ msgid "Keep rounded corners when in fullscreen"
+#~ msgstr "Зберігати заокруглені кути в повноекранному режимі"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even for fullscreen window"
+#~ msgstr ""
+#~ "Завжди зберігати заокруглені кути, коли вікно розгорнуто на весь екран."
 
 #~ msgid "Rounded Corners Settings..."
 #~ msgstr "Налаштування заокруглених кутів..."

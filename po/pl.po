@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 13:19-0500\n"
+"POT-Creation-Date: 2026-10-31 13:17-0500\n"
 "PO-Revision-Date: 2023-10-29 05:13+0000\n"
 "Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/rounded-window-"
@@ -41,280 +41,57 @@ msgid ""
 "windows."
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:25
 #, fuzzy
 msgid "Add window"
 msgstr "Dodaj okno"
-
-#: src/preferences/pages/custom.ui:6 src/preferences/pages/custom.ui:10
-msgid "Custom"
-msgstr "Własne"
-
-#: src/preferences/pages/custom.ui:11
-#, fuzzy
-msgid "Set custom effect setting for each window class"
-msgstr "Włącz własne ustawienia dla tego okna"
-
-#: src/preferences/pages/edit-shadow.ui:6
-msgid "Edit shadows"
-msgstr ""
-
-#: src/preferences/pages/edit-shadow.ui:28
-#, fuzzy
-msgid "Focused window"
-msgstr "Wybrane okno"
-
-#: src/preferences/pages/edit-shadow.ui:43
-#, fuzzy
-msgid "Unfocused window"
-msgstr "Nieaktywne okno"
-
-#: src/preferences/pages/edit-shadow.ui:66
-#, fuzzy
-msgid "Focused shadow preferences"
-msgstr "Przywróć preferencje do domyślnych"
-
-#: src/preferences/pages/edit-shadow.ui:69
-#: src/preferences/pages/edit-shadow.ui:209
-#, fuzzy
-msgid "Horizontal offset"
-msgstr "Poziome przesunięcie"
-
-#: src/preferences/pages/edit-shadow.ui:96
-#: src/preferences/pages/edit-shadow.ui:236
-#, fuzzy
-msgid "Vertical offset"
-msgstr "Poziome przesunięcie"
-
-#: src/preferences/pages/edit-shadow.ui:123
-#: src/preferences/pages/edit-shadow.ui:263
-#, fuzzy
-msgid "Blur radius"
-msgstr "Zaokrąglenie krawędzi"
-
-#: src/preferences/pages/edit-shadow.ui:150
-#: src/preferences/pages/edit-shadow.ui:290
-#, fuzzy
-msgid "Spread radius"
-msgstr "Zaokrąglenie krawędzi"
-
-#: src/preferences/pages/edit-shadow.ui:177
-#: src/preferences/pages/edit-shadow.ui:317
-msgid "Opacity"
-msgstr "Nieprzezroczystość"
-
-#: src/preferences/pages/edit-shadow.ui:206
-#, fuzzy
-msgid "Unfocused shadow preferences"
-msgstr "Przywróć preferencje do domyślnych"
 
 #: src/preferences/pages/general.ui:6
 msgid "General"
 msgstr "Ogólne"
 
 #: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Aplikacje"
+msgid "Appearance"
+msgstr ""
 
 #: src/preferences/pages/general.ui:11
-#, fuzzy
 msgid ""
-"Some applications created with LibAdwaita or LibHandy already have rounded "
-"corners. You can enable those settings to avoid rounding their corners an "
-"extra time."
-msgstr ""
-"Aplikacje wykorzystujące LibAdwaita i LibHandy natywnie wspierają "
-"zaokrąglone narożniki, więc możemy je pominąć wykorzystując te ustawienia"
-
-#: src/preferences/pages/general.ui:14
-#, fuzzy
-msgid "Skip LibAdwaita applications"
-msgstr "Pomiń aplikacje wykorzystujące LibAdwaita"
-
-#: src/preferences/pages/general.ui:19
-#, fuzzy
-msgid "Skip LibHandy applications"
-msgstr "Pomiń aplikacje wykorzytujące LibHandy"
-
-#: src/preferences/pages/general.ui:26
-#, fuzzy
-msgid "Global settings"
-msgstr "Globalne ustawienia"
-
-#: src/preferences/pages/general.ui:27
-msgid "These settings will have an effect on all windows"
+"Windows get the corners, border, outline, shadow and margin of libadwaita "
+"windows, in each state: normal, maximized, tiled and fullscreen. Change them "
+"in ~/.config/gtk-4.0/gtk.css and every window follows, live. libadwaita apps "
+"are left alone, since they already draw them."
 msgstr ""
 
-#: src/preferences/pages/general.ui:30
-#, fuzzy
-msgid "Border width"
-msgstr "Grubość obramowania"
-
-#: src/preferences/pages/general.ui:57 src/preferences/pages/general.ui:65
-#: src/preferences/widgets/custom_settings_row.ts:20
-#, fuzzy
-msgid "Border color"
-msgstr "Kolor obramowania"
-
-#: src/preferences/pages/general.ui:74 src/preferences/pages/general.ui:82
-#: src/preferences/widgets/custom_settings_row.ts:28
-#, fuzzy
-msgid "Unfocused border color"
-msgstr "Kolor obramowania"
-
-#: src/preferences/pages/general.ui:91
-#: src/preferences/widgets/custom_settings_row.ts:36
-#, fuzzy
-msgid "Corner radius"
-msgstr "Zaokrąglenie krawędzi"
-
-#: src/preferences/pages/general.ui:118
-#: src/preferences/widgets/custom_settings_row.ts:46
-#, fuzzy
-msgid "Corner smoothing"
-msgstr "wygładzanie krawędzi"
-
-#: src/preferences/pages/general.ui:144
-#, fuzzy
-msgid "Window shadow"
-msgstr "Styl cienia wybranego okna"
-
-#: src/preferences/pages/general.ui:145
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Dostosuj cień okien z zaokrąglonymi krawędziami"
-
-#: src/preferences/pages/general.ui:157
-#, fuzzy
-msgid "Keep shadows for maximized and fullscreen windows"
-msgstr "Zaokrąglaj okna w pełnym ekranie"
-
-#: src/preferences/pages/general.ui:162
-#, fuzzy
-msgid "Keep rounded corners for maximized windows"
-msgstr "Zaokrąglaj okna kiedy zmaksymalizowane"
-
-#: src/preferences/pages/general.ui:167
-#, fuzzy
-msgid "Keep rounded corners for fullscreen windows"
-msgstr "Zaokrąglaj okna w pełnym ekranie"
-
-#: src/preferences/pages/general.ui:177
-#, fuzzy
-msgid "Window margin"
-msgstr "Styl cienia wybranego okna"
-
-#: src/preferences/pages/general.ui:178
-msgid ""
-"Reserve space around the desktop for maximized and tiled windows without "
-"cropping their contents. Fullscreen windows are unaffected. No extra space "
-"is added between tiled windows. Applies to all applications."
-msgstr ""
-
-#: src/preferences/pages/general.ui:181
-msgid "Enable outer margin"
-msgstr ""
-
-#: src/preferences/pages/general.ui:186
-msgid "Margin size"
-msgstr ""
-
-#: src/preferences/pages/general.ui:187
-msgid "Logical pixels on each outer edge"
-msgstr ""
-
-#: src/preferences/pages/general.ui:203
+#: src/preferences/pages/general.ui:16
 msgid "Tweaks"
 msgstr "Ulepszenia"
 
-#: src/preferences/pages/general.ui:206
+#: src/preferences/pages/general.ui:19
 msgid "Hide effects while moving or resizing"
 msgstr ""
 
-#: src/preferences/pages/general.ui:207
+#: src/preferences/pages/general.ui:20
 msgid ""
 "Hide borders, rounded corners and shadows during the operation, then fade "
 "them back together when it ends"
 msgstr ""
 
-#: src/preferences/pages/general.ui:212
-msgid "Add rounded corners to Kitty Terminal on Wayland"
-msgstr ""
-
-#: src/preferences/pages/general.ui:213
-msgid "Adjust paddings for Kitty Terminal to correctly round its corners"
-msgstr ""
-
-#: src/preferences/pages/general.ui:220
+#: src/preferences/pages/general.ui:27
 msgid "Debug"
 msgstr "Debuguj"
 
-#: src/preferences/pages/general.ui:223
+#: src/preferences/pages/general.ui:30
 #, fuzzy
 msgid "Enable debug logs"
 msgstr "Włącz logi"
 
-#: src/preferences/pages/general.ui:224
+#: src/preferences/pages/general.ui:31
 #, fuzzy
 msgid ""
 "Run journalctl -o cat -f /usr/bin/gnome-shell in your terminal to see the log"
 msgstr ""
 "Aby zobaczyć log, uruchom w terminalu polecenie <i>journalctl -o cat -f /usr/"
 "bin/gnome-shell</i>"
-
-#: src/preferences/pages/general.ui:233
-#, fuzzy
-msgid "Reset preferences"
-msgstr "Przywróć preferencje do domyślnych"
-
-#: src/preferences/pages/reset.ui:6
-msgid "Reset settings"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:16
-#, fuzzy
-msgid "Settings to reset"
-msgstr "Wybierz elementy do zresetowania"
-
-#: src/preferences/pages/reset.ui:22
-#, fuzzy
-msgid "Select all"
-msgstr "Wybierz wszystkie"
-
-#: src/preferences/pages/reset.ui:39
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:55
-msgid "Reset these settings?"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:60
-msgid "_Cancel"
-msgstr ""
-
-#: src/preferences/pages/reset.ui:61
-msgid "_Reset"
-msgstr ""
-
-#: src/preferences/widgets/paddings-row.ui:12
-msgid "Paddings"
-msgstr "Marginesy wewnętrzne"
-
-#: src/preferences/widgets/paddings-row.ui:25
-msgid "Top"
-msgstr ""
-
-#: src/preferences/widgets/paddings-row.ui:40
-msgid "Bottom"
-msgstr "Dół"
-
-#: src/preferences/widgets/paddings-row.ui:55
-msgid "Left"
-msgstr "Lewo"
-
-#: src/preferences/widgets/paddings-row.ui:70
-msgid "Right"
-msgstr "Prawo"
 
 #: src/preferences/pages/blacklist.ts:62
 #, fuzzy
@@ -339,30 +116,158 @@ msgstr "Zwiększ ten rząd aby wybrać okno"
 msgid "Can't pick window from this position"
 msgstr "Nie można wybrać okna z tej pozycji"
 
-#: src/preferences/widgets/custom_settings_row.ts:16
-#, fuzzy
-msgid "Enabled"
-msgstr "Włącz"
+#~ msgid "Custom"
+#~ msgstr "Własne"
 
-#: src/preferences/widgets/custom_settings_row.ts:56
 #, fuzzy
-msgid "Keep rounded corners when maximized"
-msgstr "Zaokrąglaj okna kiedy zmaksymalizowane"
+#~ msgid "Set custom effect setting for each window class"
+#~ msgstr "Włącz własne ustawienia dla tego okna"
 
-#: src/preferences/widgets/custom_settings_row.ts:58
 #, fuzzy
-msgid "Always clip rounded corners even if window is maximized or tiled"
-msgstr "Zaokrąglaj krawędzie okien, nawet jeśli okno jest zmaksymalizowane."
+#~ msgid "Focused window"
+#~ msgstr "Wybrane okno"
 
-#: src/preferences/widgets/custom_settings_row.ts:62
 #, fuzzy
-msgid "Keep rounded corners when in fullscreen"
-msgstr "Zaokrąglaj okna w pełnym ekranie"
+#~ msgid "Unfocused window"
+#~ msgstr "Nieaktywne okno"
 
-#: src/preferences/widgets/custom_settings_row.ts:63
 #, fuzzy
-msgid "Always clip rounded corners even for fullscreen window"
-msgstr "Zawsze zachowuj, gdy okno jest w trybie pełnoekranowym."
+#~ msgid "Focused shadow preferences"
+#~ msgstr "Przywróć preferencje do domyślnych"
+
+#, fuzzy
+#~ msgid "Horizontal offset"
+#~ msgstr "Poziome przesunięcie"
+
+#, fuzzy
+#~ msgid "Vertical offset"
+#~ msgstr "Poziome przesunięcie"
+
+#, fuzzy
+#~ msgid "Blur radius"
+#~ msgstr "Zaokrąglenie krawędzi"
+
+#, fuzzy
+#~ msgid "Spread radius"
+#~ msgstr "Zaokrąglenie krawędzi"
+
+#~ msgid "Opacity"
+#~ msgstr "Nieprzezroczystość"
+
+#, fuzzy
+#~ msgid "Unfocused shadow preferences"
+#~ msgstr "Przywróć preferencje do domyślnych"
+
+#~ msgid "Applications"
+#~ msgstr "Aplikacje"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some applications created with LibAdwaita or LibHandy already have "
+#~ "rounded corners. You can enable those settings to avoid rounding their "
+#~ "corners an extra time."
+#~ msgstr ""
+#~ "Aplikacje wykorzystujące LibAdwaita i LibHandy natywnie wspierają "
+#~ "zaokrąglone narożniki, więc możemy je pominąć wykorzystując te ustawienia"
+
+#, fuzzy
+#~ msgid "Skip LibAdwaita applications"
+#~ msgstr "Pomiń aplikacje wykorzystujące LibAdwaita"
+
+#, fuzzy
+#~ msgid "Skip LibHandy applications"
+#~ msgstr "Pomiń aplikacje wykorzytujące LibHandy"
+
+#, fuzzy
+#~ msgid "Global settings"
+#~ msgstr "Globalne ustawienia"
+
+#, fuzzy
+#~ msgid "Border width"
+#~ msgstr "Grubość obramowania"
+
+#, fuzzy
+#~ msgid "Border color"
+#~ msgstr "Kolor obramowania"
+
+#, fuzzy
+#~ msgid "Unfocused border color"
+#~ msgstr "Kolor obramowania"
+
+#, fuzzy
+#~ msgid "Corner radius"
+#~ msgstr "Zaokrąglenie krawędzi"
+
+#, fuzzy
+#~ msgid "Corner smoothing"
+#~ msgstr "wygładzanie krawędzi"
+
+#, fuzzy
+#~ msgid "Window shadow"
+#~ msgstr "Styl cienia wybranego okna"
+
+#~ msgid "Customize the shadow of the rounded corner window"
+#~ msgstr "Dostosuj cień okien z zaokrąglonymi krawędziami"
+
+#, fuzzy
+#~ msgid "Keep shadows for maximized and fullscreen windows"
+#~ msgstr "Zaokrąglaj okna w pełnym ekranie"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for maximized windows"
+#~ msgstr "Zaokrąglaj okna kiedy zmaksymalizowane"
+
+#, fuzzy
+#~ msgid "Keep rounded corners for fullscreen windows"
+#~ msgstr "Zaokrąglaj okna w pełnym ekranie"
+
+#, fuzzy
+#~ msgid "Window margin"
+#~ msgstr "Styl cienia wybranego okna"
+
+#, fuzzy
+#~ msgid "Reset preferences"
+#~ msgstr "Przywróć preferencje do domyślnych"
+
+#, fuzzy
+#~ msgid "Settings to reset"
+#~ msgstr "Wybierz elementy do zresetowania"
+
+#, fuzzy
+#~ msgid "Select all"
+#~ msgstr "Wybierz wszystkie"
+
+#~ msgid "Paddings"
+#~ msgstr "Marginesy wewnętrzne"
+
+#~ msgid "Bottom"
+#~ msgstr "Dół"
+
+#~ msgid "Left"
+#~ msgstr "Lewo"
+
+#~ msgid "Right"
+#~ msgstr "Prawo"
+
+#, fuzzy
+#~ msgid "Enabled"
+#~ msgstr "Włącz"
+
+#, fuzzy
+#~ msgid "Keep rounded corners when maximized"
+#~ msgstr "Zaokrąglaj okna kiedy zmaksymalizowane"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even if window is maximized or tiled"
+#~ msgstr "Zaokrąglaj krawędzie okien, nawet jeśli okno jest zmaksymalizowane."
+
+#, fuzzy
+#~ msgid "Keep rounded corners when in fullscreen"
+#~ msgstr "Zaokrąglaj okna w pełnym ekranie"
+
+#, fuzzy
+#~ msgid "Always clip rounded corners even for fullscreen window"
+#~ msgstr "Zawsze zachowuj, gdy okno jest w trybie pełnoekranowym."
 
 #~ msgid "Rounded Corners Settings..."
 #~ msgstr "Ustawienia zaokrąglonych narożników..."
