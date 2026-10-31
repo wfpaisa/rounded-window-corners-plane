@@ -44,6 +44,7 @@ export const GeneralPage = GObject.registerClass(
             'keepForFullscreen',
             'paddings',
             'tweakKitty',
+            'vramBudget',
             'enableDebugLogs',
         ],
     },
@@ -63,6 +64,7 @@ export const GeneralPage = GObject.registerClass(
         private declare _keepForFullscreen: Adw.SwitchRow;
         private declare _paddings: PaddingsRowClass;
         private declare _tweakKitty: Adw.SwitchRow;
+        private declare _vramBudget: Adw.SpinRow;
         private declare _enableDebugLogs: Adw.SwitchRow;
 
         readonly #settings = getPref('global-rounded-corner-settings');
@@ -246,6 +248,13 @@ export const GeneralPage = GObject.registerClass(
                 'tweak-kitty-terminal',
                 this._tweakKitty,
                 'active',
+                Gio.SettingsBindFlags.DEFAULT,
+            );
+
+            bindPref(
+                'vram-budget',
+                this._vramBudget,
+                'value',
                 Gio.SettingsBindFlags.DEFAULT,
             );
 

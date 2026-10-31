@@ -54,6 +54,7 @@ export const ResetPage = GObject.registerClass(
             'keep-shadow-for-maximized-fullscreen':
                 'Keep Window Shadows when Maximized or Fullscreen',
             'border-width': 'Border Width',
+            'vram-budget': 'Video Memory for Windows',
             'debug-mode': 'Enable Log',
 
             borderRadius: 'Border Radius',

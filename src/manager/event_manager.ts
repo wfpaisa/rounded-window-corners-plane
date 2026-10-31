@@ -8,6 +8,7 @@ import type Shell from 'gi://Shell';
 
 import Meta from 'gi://Meta';
 
+import {trimBuffers} from '../effect/rounded_corners_effect.js';
 import {logDebug} from '../utils/log.js';
 import {prefs} from '../utils/settings.js';
 import {hasMetaWindow, type RoundedWindowActor} from '../utils/types.js';
@@ -29,6 +30,7 @@ export function enableEffect() {
         'changed::suspend-during-interaction',
         handlers.onInteractionSettingChanged,
     );
+    connect(prefs, 'changed::vram-budget', trimBuffers);
 
     const wm = global.windowManager;
 

@@ -129,10 +129,15 @@ let idleSourceId = 0;
 // Every live target, to drop their idle buffers.
 const targets = new Set<Target>();
 
-// VRAM that all buffers together may use. A maximized window takes about
-// 20 MiB on a 1080p monitor and 72 MiB on a 4K one.
-const BUFFER_BUDGET_BYTES = 512 * 1024 * 1024;
 let usedBytes = 0;
+
+/**
+ * VRAM that all buffers together may use, from the preferences. A maximized
+ * window takes about 20 MiB on a 1080p monitor and 72 MiB on a 4K one.
+ */
+function budgetBytes() {
+    return getPref('vram-budget') * 1024 * 1024;
+}
 
 // Cogl gives each offscreen framebuffer a packed depth and stencil buffer
 // next to its color texture, and GJS cannot ask it not to, so every pixel
@@ -206,6 +211,14 @@ function createBuffer(
     height: number,
 ): Buffer | null {
     const texture = Cogl.Texture2D.new_with_size(context, width, height);
+    // Cogl returns null for sizes it cannot hold, for example while GNOME
+    // takes the snapshot for a maximize animation.
+    if (!texture) {
+        logError(
+            `Failed to create a ${width}x${height} rounded corners buffer`,
+        );
+        return null;
+    }
     const framebuffer = Cogl.Offscreen.new_with_texture(texture);
     try {
         framebuffer.allocate();
@@ -263,7 +276,7 @@ function startIdleCheck() {
 }
 
 /** The target, other than `except`, whose buffer was painted least recently. */
-function leastRecentlyUsed(except: Target) {
+function leastRecentlyUsed(except: Target | null) {
     let oldest: Target | null = null;
     for (const target of targets) {
         if (target === except || !target.buffer) continue;
@@ -272,6 +285,20 @@ function leastRecentlyUsed(except: Target) {
             oldest = target;
     }
     return oldest;
+}
+
+/** Drop the least recently painted buffers until they fit a lower budget. */
+export function trimBuffers() {
+    let released = false;
+    while (usedBytes > budgetBytes()) {
+        const victim = leastRecentlyUsed(null);
+        if (!victim) break;
+        releaseBuffer(victim);
+        released = true;
+    }
+    if (!released) return;
+    scheduleGc();
+    logBuffers('budget change');
 }
 
 /**
@@ -296,7 +323,7 @@ function acquireBuffer(
 
     while (
         usedBytes + allocWidth * allocHeight * BYTES_PER_PIXEL >
-        BUFFER_BUDGET_BYTES
+        budgetBytes()
     ) {
         const victim = leastRecentlyUsed(target);
         if (!victim) break;

@@ -217,6 +217,26 @@
     </child>
     <child>
       <object class="AdwPreferencesGroup">
+        <property name="title" translatable="yes">Performance</property>
+        <child>
+          <object class="AdwSpinRow" id="vramBudget">
+            <property name="title" translatable="yes">Video memory for windows</property>
+            <property name="subtitle" translatable="yes">MiB that window buffers may use. A maximized window takes about 20 MiB at 1080p and 72 MiB at 4K. Below what your windows need, the overview may stutter</property>
+            <property name="digits">0</property>
+            <property name="adjustment">
+              <object class="GtkAdjustment">
+                <property name="lower">64</property>
+                <property name="upper">4096</property>
+                <property name="step-increment">64</property>
+                <property name="page-increment">256</property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="AdwPreferencesGroup">
         <property name="title" translatable="yes">Debug</property>
         <child>
           <object class="AdwSwitchRow" id="enableDebugLogs">

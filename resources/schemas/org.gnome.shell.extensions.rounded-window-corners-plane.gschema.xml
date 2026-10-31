@@ -120,6 +120,12 @@
       <default>false</default>
     </key>
 
+    <key name="vram-budget" type="i">
+      <summary>Video memory that window buffers may use, in MiB</summary>
+      <range min="64" max="4096"/>
+      <default>512</default>
+    </key>
+
     <key name="debug-mode" type="b">
       <summary>If enabled, extension will show debug info into journalctl</summary>
       <default>false</default>

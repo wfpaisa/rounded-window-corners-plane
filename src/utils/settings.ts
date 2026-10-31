@@ -30,6 +30,7 @@ type Schema = {
     'focused-shadow': BoxShadow;
     'unfocused-shadow': BoxShadow;
     'keep-shadow-for-maximized-fullscreen': boolean;
+    'vram-budget': number;
     'debug-mode': boolean;
     'tweak-kitty-terminal': boolean;
 };
@@ -53,6 +54,7 @@ export const Schema = {
     'focused-shadow': 'a{si}',
     'unfocused-shadow': 'a{si}',
     'keep-shadow-for-maximized-fullscreen': 'b',
+    'vram-budget': 'i',
     'debug-mode': 'b',
     'tweak-kitty-terminal': 'b',
 };

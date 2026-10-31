@@ -57,7 +57,9 @@ nueva en la sección de historial.
 
 - **Qué hace**: cada ventana tiene su propio buffer offscreen y solo se
   vuelve a renderizar cuando cambia su contenido, tamaño o posición. Todos los
-  buffers comparten un presupuesto de VRAM (`BUFFER_BUDGET_BYTES`, 512 MiB).
+  buffers comparten un presupuesto de VRAM (512 MiB por defecto, ajustable en
+  Preferencias → Rendimiento → *Video memory for windows*, clave
+  `vram-budget`).
   Si una ventana necesita un buffer y no hay presupuesto, toma el de la
   ventana que lleva más tiempo sin pintarse (LRU), y esa otra se vuelve a
   renderizar cuando se pinte. El presupuesto cuenta 8 bytes por píxel: 4 de
@@ -128,6 +130,17 @@ no tenga canal alfa, no se cumple en Chrome, VS Code ni Electron: todas usan
 texturas con alfa aunque se vean opacas. No ahorraba nada y se quitó. Asumir
 que toda ventana es opaca haría que una terminal translúcida mostrara el fondo
 de pantalla en vez de las ventanas de detrás.
+
+### Presupuesto de VRAM configurable
+
+- **Qué hace**: el tope de memoria de los buffers de ventana se elige en las
+  preferencias, de 64 a 4096 MiB (512 por defecto). Al bajarlo se liberan de
+  inmediato los buffers pintados hace más tiempo hasta caber en el nuevo tope.
+- **Por qué**: el valor ideal depende del equipo. Con monitores 4K y muchas
+  ventanas, 512 MiB puede quedarse corto en el overview y dar tirones; con
+  poca VRAM, se prefiere un tope menor aunque el overview vaya algo peor.
+- **Dónde**: `budgetBytes`, `trimBuffers` en `rounded_corners_effect.ts`;
+  la señal `changed::vram-budget` en `event_manager.ts`.
 
 ### Recolección de basura forzada al liberar buffers
 
@@ -331,8 +344,9 @@ orden y la razón de cada cambio:
 8. **Todo pintado offscreen a la escala del monitor** (estado actual). Otra
    animación seguía pintando todas las ventanas a 2x (416 MiB de pico).
 
-Si hay que ajustar el tope, cambia `BUFFER_BUDGET_BYTES` en
-`src/effect/rounded_corners_effect.ts`. Como referencia, una ventana
+El tope se ajusta en Preferencias → Rendimiento (clave `vram-budget`, de 64 a
+4096 MiB). Al bajarlo se liberan en el acto los buffers pintados hace más
+tiempo hasta caber. Como referencia, una ventana
 maximizada ocupa unos 20 MiB en un monitor 1080p y unos 72 MiB en uno 4K,
 contando color, profundidad y stencil.
 
