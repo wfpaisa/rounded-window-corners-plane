@@ -98,6 +98,31 @@ nueva en la sección de historial.
   overview, las animaciones o ventanas deformadas no se descarta nada.
 - **Dónde**: `offView` en `rounded_corners_effect.ts`.
 
+### Deformaciones a la escala del monitor
+
+- **Qué hace**: cuando un efecto que deforma la ventana (wobbly de *Compiz
+  windows effect*, lámpara mágica) la envuelve, el efecto la renderiza a la
+  escala del monitor de la ventana y reutiliza el buffer que ya tiene.
+- **Por qué**: esos efectos pintan la ventana en su propio buffer a
+  `ceil(escala)`, 2 a 150 %, y el efecto la renderizaba también a 2 en un
+  buffer aparte: unos 113 MiB por ventana maximizada en 4K cada vez que se
+  maximizaba o se movía, que tardaban 10 s en liberarse. Medido con
+  `nvidia-smi`: 534 MiB en reposo y 786 MiB al maximizar. Durante la
+  animación la ventana se ve apenas más suave; en reposo no cambia nada.
+- **Dónde**: `paintScale` en `rounded_corners_effect.ts`.
+
+### Probado y descartado: no pintar ventanas tapadas
+
+Mutter omite lo que otras ventanas tapan, pero no en ventanas con efectos, así
+que con la extensión se renderizan también las ventanas tapadas (por ejemplo,
+varias maximizadas apiladas, cada una con su buffer). Se probó omitir una
+ventana cuando otra opaca cubre todo su marco, pero Mutter no expone desde JS
+la región opaca de las ventanas, y la única señal disponible, que la textura
+no tenga canal alfa, no se cumple en Chrome, VS Code ni Electron: todas usan
+texturas con alfa aunque se vean opacas. No ahorraba nada y se quitó. Asumir
+que toda ventana es opaca haría que una terminal translúcida mostrara el fondo
+de pantalla en vez de las ventanas de detrás.
+
 ### Recolección de basura forzada al liberar buffers
 
 - **Qué hace**: se programa un `System.gc()` en idle cuando se han liberado
@@ -287,10 +312,16 @@ orden y la razón de cada cambio:
    a 2x con mipmaps por ventana en cada apertura del overview, fuera del
    presupuesto (ver "Vistas previas del overview sin efectos extra"). Sin
    él, las vistas previas reutilizan el buffer de cada ventana.
-6. **Sin buffers para monitores que no muestran la ventana** (estado
-   actual). Al contar el coste real (8 B/píxel) y liberar por temporizador, la
-   VRAM no bajaba: los logs mostraron que cada ventana se pintaba también en
-   los monitores donde estaba fuera de pantalla, con un buffer por escala.
+6. **Sin buffers para monitores que no muestran la ventana**. Al contar el
+   coste real (8 B/píxel) y liberar por temporizador, la VRAM no bajaba: los
+   logs mostraron que cada ventana se pintaba también en los monitores donde
+   estaba fuera de pantalla, con un buffer por escala.
+   Con eso el coste de la extensión pasó de ~470 MiB a ~110–190 MiB.
+7. **Deformaciones a la escala del monitor** (estado actual). Al maximizar
+   con *Compiz windows effect*, el efecto creaba un buffer extra a 2x de unos
+   113 MiB por ventana. Ahora reutiliza el de la ventana. Antes se probó no
+   pintar las ventanas tapadas, pero no se puede saber si una ventana es
+   opaca (ver "Probado y descartado").
 
 Si hay que ajustar el tope, cambia `BUFFER_BUDGET_BYTES` en
 `src/effect/rounded_corners_effect.ts`. Como referencia, una ventana

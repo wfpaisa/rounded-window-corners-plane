@@ -389,20 +389,39 @@ function paintScale(
     actor: Clutter.Actor,
     stage: Clutter.Stage,
     ctx: Clutter.PaintContext,
+    deformed: boolean,
 ) {
+    const scale = viewScale(stage, ctx);
+    if (scale !== null) return scale;
+    // A deforming effect paints the window into its own buffer at
+    // ceil(scale), 2 at 150%. Rendering at that scale too took another
+    // buffer per window, of about 113 MiB for a maximized one on a 4K
+    // monitor, for each maximize or wobble. At the monitor's scale it shares
+    // the buffer the window already has, and the animation is barely softer.
+    if (deformed) {
+        const own =
+            actor instanceof Meta.WindowActor ? actor : actor.get_parent();
+        const window = own instanceof Meta.WindowActor ? own.metaWindow : null;
+        const monitor = window?.get_monitor() ?? -1;
+        if (monitor >= 0) return global.display.get_monitor_scale(monitor);
+    }
+    // Other nested offscreen paints: same choice as ClutterOffscreenEffect.
+    return actor.get_resource_scale();
+}
+
+/** Scale of the monitor being painted, or null in an offscreen paint. */
+function viewScale(stage: Clutter.Stage, ctx: Clutter.PaintContext) {
     const framebuffer = ctx.get_framebuffer();
     const [stageWidth, stageHeight] = stage.get_size();
     const scaleX = framebuffer.get_viewport_width() / stageWidth;
     const scaleY = framebuffer.get_viewport_height() / stageHeight;
-    if (Math.abs(scaleX - scaleY) < 0.01) {
-        const display = global.display;
-        for (let i = 0; i < display.get_n_monitors(); i++) {
-            const scale = display.get_monitor_scale(i);
-            if (Math.abs(scale - scaleX) < 0.01) return scale;
-        }
+    if (Math.abs(scaleX - scaleY) >= 0.01) return null;
+    const display = global.display;
+    for (let i = 0; i < display.get_n_monitors(); i++) {
+        const scale = display.get_monitor_scale(i);
+        if (Math.abs(scale - scaleX) < 0.01) return scale;
     }
-    // Nested offscreen paints: same choice as ClutterOffscreenEffect.
-    return actor.get_resource_scale();
+    return null;
 }
 
 /**
@@ -462,7 +481,9 @@ function offView(actor: Clutter.Actor, ctx: Clutter.PaintContext) {
     const volume = actor.get_paint_volume();
     if (!(stage && volume)) return false;
     const framebuffer = ctx.get_framebuffer();
-    const scale = paintScale(actor, stage as Clutter.Stage, ctx);
+    // Only monitors: a screenshot of the window paints it offscreen.
+    const scale = viewScale(stage as Clutter.Stage, ctx);
+    if (scale === null) return false;
     const screen = screenOrigin(framebuffer, scale);
     if (!screen) return false;
     const origin = volume.get_origin();
@@ -693,7 +714,12 @@ export const RoundedCornersEffect = GObject.registerClass(
         ) {
             const stage = actor.get_stage();
             if (!stage) return null;
-            const scale = paintScale(actor, stage as Clutter.Stage, ctx);
+            const scale = paintScale(
+                actor,
+                stage as Clutter.Stage,
+                ctx,
+                deformed,
+            );
 
             let x1: number;
             let y1: number;
